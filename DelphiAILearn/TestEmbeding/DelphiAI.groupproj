@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9862BC24-5833-4E9B-A047-570A64D96E1B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestEmbedding.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\TestSplitDocAndEmbed\TestSplitDocAndEmbed.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestEmbedding">
+        <MSBuild Projects="TestEmbedding.dproj"/>
+    </Target>
+    <Target Name="TestEmbedding:Clean">
+        <MSBuild Projects="TestEmbedding.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestEmbedding:Make">
+        <MSBuild Projects="TestEmbedding.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestSplitDocAndEmbed">
+        <MSBuild Projects="..\TestSplitDocAndEmbed\TestSplitDocAndEmbed.dproj"/>
+    </Target>
+    <Target Name="TestSplitDocAndEmbed:Clean">
+        <MSBuild Projects="..\TestSplitDocAndEmbed\TestSplitDocAndEmbed.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestSplitDocAndEmbed:Make">
+        <MSBuild Projects="..\TestSplitDocAndEmbed\TestSplitDocAndEmbed.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestEmbedding;TestSplitDocAndEmbed"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestEmbedding:Clean;TestSplitDocAndEmbed:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestEmbedding:Make;TestSplitDocAndEmbed:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
