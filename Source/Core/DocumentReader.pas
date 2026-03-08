@@ -61,7 +61,45 @@ type
     function ReadTable(const ADocumentPath: string): TArray<TArray<string>>; virtual;
   end;
 
+// 解析文件
+function ParseFile(AFilePath: String):TParseDocumentResult;
+
+
 implementation
+
+uses
+  NativePDFDocumentReader;
+
+function ParseFile(AFilePath: String):TParseDocumentResult;
+var
+  AFileExt:String;
+  AReader:TDocumentReader;
+begin
+  Result:=nil;
+
+  // 根据文件的后缀名来解析文件
+  AFileExt := LowerCase(ExtractFileExt(AFilePath));
+
+  AReader:=nil;
+
+  if AFileExt = '.pdf' then
+  begin
+    AReader:=TNativePDFDocumentReader.Create;
+  end;
+
+  if AReader <> nil then
+  begin
+    try
+        Result := AReader.Read(AFilePath);
+
+    finally
+      FreeAndNil(AReader);
+    end;
+  end;
+
+
+end;
+
 
 { TParseImageItem }
 
