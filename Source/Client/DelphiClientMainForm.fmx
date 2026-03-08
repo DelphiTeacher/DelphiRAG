@@ -1,0 +1,21 @@
+inherited frmOrangeUIClientMain: TfrmOrangeUIClientMain
+  Caption = 'frmMainYCClient'
+  DesignerMasterStyle = 0
+  inherited MediaPlayerMain: TMediaPlayer
+    Top = 304
+  end
+  inherited tteGetApp: TTimerTaskEvent
+    Top = 360
+  end
+  object SkinTheme1: TSkinTheme
+    SkinPictureThemeColor = xFFFF4F4E
+    NavigationBarFontColor = claBlack
+    NavigationBarColor = xFFF8F9FB
+    SkinThemeColor = xFFFFCA4A
+    SkinThemeColor1 = xFF00CF84
+    SkinThemeColor2 = xFF4DC060
+    SkinThemeColor3 = xFF4DC060
+    Left = 128
+    Top = 240
+  end
+end

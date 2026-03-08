@@ -1,0 +1,2006 @@
+object FrameShopGoodsEvalvateList: TFrameShopGoodsEvalvateList
+  Size.Width = 320.000000000000000000
+  Size.Height = 819.000000000000000000
+  Size.PlatformDefault = False
+  object pnlToolBar: TSkinFMXPanel
+    ParentMouseEvent = False
+    DirectUIVisible = False
+    ComponentTypeUseKind = ctukDefault
+    MaterialUseKind = mukRef
+    KeepSelfOwnMaterial = False
+    RefMaterial = dmEasyServiceCommonMaterial.pnlToolBarMaterial
+    MouseDownFocus = False
+    Align = Top
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Caption = #35780#20215
+    Text = #35780#20215
+    Properties.IsToolBar = True
+    object btnReturn: TSkinFMXButton
+      ParentMouseEvent = False
+      DirectUIVisible = False
+      ComponentTypeUseKind = ctukDefault
+      MaterialUseKind = mukRef
+      KeepSelfOwnMaterial = False
+      RefMaterial = dmEasyServiceCommonMaterial.bdmReturnButton
+      MouseDownFocus = False
+      Align = Left
+      ClipChildren = True
+      Size.Width = 80.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = btnReturnClick
+      Properties.AutoSize = False
+      Properties.IsAutoPush = False
+      Properties.IsPushed = False
+      Properties.Icon.IsClipRound = False
+      Properties.PushedIcon.IsClipRound = False
+      Properties.ButtonIndex = -1
+      Properties.PushedGroupIndex = 0
+    end
+  end
+  object lbList: TSkinFMXListBox
+    ParentMouseEvent = False
+    DirectUIVisible = False
+    ComponentTypeUseKind = ctukDefault
+    MaterialUseKind = mukSelfOwn
+    KeepSelfOwnMaterial = True
+    SelfOwnMaterial.BackColor.Color = claWhite
+    SelfOwnMaterial.BackColor.IsFill = True
+    SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.IsTransparent = False
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.Color = claWhite
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.IndicatorColor = claBlack
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.LoadingPicture.IsClipRound = False
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableAutoCenterPosition = False
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableLoadingImageBiggerEffect = False
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableLoadingImageRotateEffect = True
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.LoadingCaption = #27491#22312#21047#26032'...'
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.DecidedLoadCaption = #26494#24320#21047#26032
+    SelfOwnMaterial.PullDownRefreshPanelMaterial.UnDecidedLoadCaption = #19979#25289#21047#26032
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.Color = claWhite
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.IndicatorColor = claBlack
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.LoadingPicture.IsClipRound = False
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableAutoCenterPosition = False
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableLoadingImageBiggerEffect = False
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableLoadingImageRotateEffect = True
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.LoadingCaption = #27491#22312#21152#36733'...'
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.DecidedLoadCaption = #26494#24320#21152#36733#26356#22810
+    SelfOwnMaterial.PullUpLoadMorePanelMaterial.UnDecidedLoadCaption = #19978#25289#21152#36733#26356#22810
+    SelfOwnMaterial.DrawEmptyContentCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.DrawEmptyContentCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawEmptyContentCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.ItemBackNormalPicture.IsClipRound = False
+    SelfOwnMaterial.ItemBackHoverPicture.IsClipRound = False
+    SelfOwnMaterial.ItemBackDownPicture.IsClipRound = False
+    SelfOwnMaterial.ItemBackPushedPicture.IsClipRound = False
+    SelfOwnMaterial.DrawItemBackColorParam.Color = claWhite
+    SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.ItemAccessoryPicture.IsClipRound = False
+    SelfOwnMaterial.IsDrawCenterItemRect = False
+    SelfOwnMaterial.DrawCenterItemRectParam.Color = xFFEDEDED
+    SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.IsSimpleDrawItemDevide = True
+    SelfOwnMaterial.DrawItemDevideParam.Color = xFFEDEDED
+    SelfOwnMaterial.DrawItemDevideParam.IsFill = True
+    SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetailParam.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+    SelfOwnMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.ItemAccessoryPicture.IsClipRound = False
+    SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackNormalPicture.IsClipRound = False
+    SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackHoverPicture.IsClipRound = False
+    SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackDownPicture.IsClipRound = False
+    SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackPushedPicture.IsClipRound = False
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.Color = claWhite
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.ItemAccessoryPicture.IsClipRound = False
+    SelfOwnMaterial.Item1TypeItemMaterial.ItemBackNormalPicture.IsClipRound = False
+    SelfOwnMaterial.Item1TypeItemMaterial.ItemBackHoverPicture.IsClipRound = False
+    SelfOwnMaterial.Item1TypeItemMaterial.ItemBackDownPicture.IsClipRound = False
+    SelfOwnMaterial.Item1TypeItemMaterial.ItemBackPushedPicture.IsClipRound = False
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.Color = claWhite
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+    SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+    SelfOwnMaterial.DrawSpaceParam.Color = claWhite
+    SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.IsSimpleDrawGroupRoundRect = False
+    SelfOwnMaterial.IsSimpleDrawGroupBeginDevide = True
+    SelfOwnMaterial.IsSimpleDrawGroupEndDevide = True
+    SelfOwnMaterial.DrawGroupBeginDevideParam.Color = xFFEDEDED
+    SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupEndDevideParam.Color = xFFEDEDED
+    SelfOwnMaterial.DrawGroupEndDevideParam.IsFill = True
+    SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    SelfOwnMaterial.IsAutoAdjustItemDesignerPanelSize = True
+    MouseDownFocus = False
+    Align = Client
+    ClipChildren = True
+    Size.Width = 320.000000000000000000
+    Size.Height = 769.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    VertScrollBar.ParentMouseEvent = False
+    VertScrollBar.DirectUIVisible = False
+    VertScrollBar.ComponentTypeUseKind = ctukDefault
+    VertScrollBar.MaterialUseKind = mukSelfOwn
+    VertScrollBar.KeepSelfOwnMaterial = True
+    VertScrollBar.SelfOwnMaterial.BackColor.Color = claWhite
+    VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.ThumbBtnMinSize = 20
+    VertScrollBar.SelfOwnMaterial.ThumbBtnDrawSize = 4
+    VertScrollBar.SelfOwnMaterial.IsDefaultDrawThumbBtn = True
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.Color = x64000000
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.FillColor.Color = x64000000
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    VertScrollBar.MouseDownFocus = False
+    VertScrollBar.Position.X = 312.000000000000000000
+    VertScrollBar.Size.Width = 7.000000000000000000
+    VertScrollBar.Size.Height = 769.000000000000000000
+    VertScrollBar.Size.PlatformDefault = False
+    VertScrollBar.Properties.AutoSize = False
+    VertScrollBar.Properties.Kind = sbVertical
+    VertScrollBar.Properties.SmallChange = 1
+    VertScrollBar.Properties.LargeChange = 10
+    VertScrollBar.Properties.CanOverRangeTypes = [cortMin, cortMax]
+    HorzScrollBar.ParentMouseEvent = False
+    HorzScrollBar.DirectUIVisible = False
+    HorzScrollBar.ComponentTypeUseKind = ctukDefault
+    HorzScrollBar.MaterialUseKind = mukSelfOwn
+    HorzScrollBar.KeepSelfOwnMaterial = True
+    HorzScrollBar.SelfOwnMaterial.BackColor.Color = claWhite
+    HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnMinSize = 20
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnDrawSize = 4
+    HorzScrollBar.SelfOwnMaterial.IsDefaultDrawThumbBtn = True
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.Color = x64000000
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.FillColor.Color = x64000000
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    HorzScrollBar.MouseDownFocus = False
+    HorzScrollBar.Position.Y = 761.000000000000000000
+    HorzScrollBar.Size.Width = 320.000000000000000000
+    HorzScrollBar.Size.Height = 7.000000000000000000
+    HorzScrollBar.Size.PlatformDefault = False
+    HorzScrollBar.Properties.AutoSize = False
+    HorzScrollBar.Properties.Kind = sbHorizontal
+    HorzScrollBar.Properties.SmallChange = 1
+    HorzScrollBar.Properties.LargeChange = 10
+    HorzScrollBar.Properties.CanOverRangeTypes = []
+    ScrollControlCorner.ParentMouseEvent = False
+    ScrollControlCorner.DirectUIVisible = False
+    ScrollControlCorner.ComponentTypeUseKind = ctukDefault
+    ScrollControlCorner.MaterialUseKind = mukSelfOwn
+    ScrollControlCorner.KeepSelfOwnMaterial = True
+    ScrollControlCorner.SelfOwnMaterial.BackColor.Color = claWhite
+    ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+    ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+    ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+    ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+    ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+    ScrollControlCorner.MouseDownFocus = False
+    ScrollControlCorner.Position.X = 313.000000000000000000
+    ScrollControlCorner.Position.Y = 762.000000000000000000
+    ScrollControlCorner.Size.Width = 7.000000000000000000
+    ScrollControlCorner.Size.Height = 7.000000000000000000
+    ScrollControlCorner.Size.PlatformDefault = False
+    OnPullDownRefresh = lbListPullDownRefresh
+    OnPullUpLoadMore = lbListPullUpLoadMore
+    Properties.ContentWidth = -1.000000000000000000
+    Properties.ContentHeight = -1.000000000000000000
+    Properties.EnableAutoPullDownRefreshPanel = True
+    Properties.EnableAutoPullUpLoadMorePanel = True
+    Properties.VertCanOverRangeTypes = [cortMin, cortMax]
+    Properties.HorzCanOverRangeTypes = []
+    Properties.VertScrollBarShowType = sbstHide
+    Properties.HorzScrollBarShowType = sbstNone
+    Properties.MultiSelect = False
+    Properties.IsAutoSelected = True
+    Properties.ItemHeight = 354.000000000000000000
+    Properties.ItemSpaceType = sistDefault
+    Properties.SelectedItemHeight = -1.000000000000000000
+    Properties.ItemHeightCalcType = isctSeparate
+    Properties.ItemPanDragGestureDirection = ipdgdtLeft
+    Properties.IsEmptyContent = False
+    Properties.EmptyContentPicture.IsClipRound = False
+    Properties.IsEnabledCenterItemSelectMode = False
+    Properties.ItemWidth = -1.000000000000000000
+    Properties.SelectedItemWidth = -1.000000000000000000
+    Properties.ItemWidthCalcType = isctSeparate
+    Properties.ItemLayoutType = iltVertical
+    Properties.ItemColorType = sictNone
+    Properties.Items.Data = {
+      140000020000000400000000005C00000018140000001A000000000042006900
+      6E006100720079004F0062006A0065006300740000000E000000000E00080000
+      0048006500690067006800740000000000000000C055400E000000000C000800
+      0000570069006400740068000000000000000000F0BF15000000001000040000
+      00560069007300690062006C0065000000FFFFFFFF04000000000A0000000000
+      4E0061006D006500000007000000000800040000005400610067000000000000
+      0007000000000A00040000005400610067003100000000000000150000000010
+      000400000043006800650063006B006500640000000000000007000000001200
+      040000004900740065006D005400790070006500000001000000180C0000000A
+      001A000000490063006F006E0000005400440072006100770050006900630074
+      007500720065000000040000000014000000000049006D006100670065004E00
+      61006D00650000001700000000180000000000470049004600460069006C0065
+      004400610074006100000004000000000A060A0000004E0061006D0065000000
+      0D54F0790000490063006F006E00000004000000001006060000004300610070
+      00740069006F006E000000076898980000FE560768000004000000000C060000
+      0000470072006F007500700000000652C47E00000700000000200A0400000050
+      00690063007400750072006500440072006100770054007900700065000000D8
+      7E36527B7C8B570000000000000700000000160A0400000049006D0061006700
+      650049006E006400650078000000FE5647720B4E07680000FFFFFFFF04000000
+      00140A0000000049006D006100670065004E0061006D0065000000FE5647720D
+      54F07900000400000000120C00000000460069006C0065004E0061006D006500
+      0000FE5647728765F64E0D54000004000000001A0E000000005200650073006F
+      0075007200630065004E0061006D0065000000FE564772448D906E0D54F07900
+      000400000000080A00000000550072006C000000FE564772FE94A56300001500
+      0000001810040000004900730043006C006900700052006F0075006E00640000
+      002F6626546A52C18810620657625F000000000000180C00000008001A000000
+      5000690063000000540044007200610077005000690063007400750072006500
+      0000040000000014000000000049006D006100670065004E0061006D00650000
+      001700000000180000000000470049004600460069006C006500440061007400
+      6100000004000000000A06080000004E0061006D00650000000D54F079000050
+      006900630000000400000000100606000000430061007000740069006F006E00
+      0000076898980000FE564772000004000000000C0600000000470072006F0075
+      00700000000652C47E00000700000000200A0400000050006900630074007500
+      72006500440072006100770054007900700065000000D87E36527B7C8B570000
+      000000000700000000160A0400000049006D0061006700650049006E00640065
+      0078000000FE5647720B4E07680000FFFFFFFF0400000000140A000000004900
+      6D006100670065004E0061006D0065000000FE5647720D54F079000004000000
+      00120C00000000460069006C0065004E0061006D0065000000FE5647728765F6
+      4E0D54000004000000001A0E000000005200650073006F007500720063006500
+      4E0061006D0065000000FE564772448D906E0D54F07900000400000000080A00
+      000000550072006C000000FE564772FE94A56300001500000000181004000000
+      4900730043006C006900700052006F0075006E00640000002F6626546A52C188
+      10620657625F00000000000007000000001200040000004900740065006D0054
+      0079007000650000000100000004000000001000000000004300610070007400
+      69006F006E00000004000000000E0000000000440065007400610069006C0000
+      000400000000100000000000440065007400610069006C003100000004000000
+      00100000000000440065007400610069006C0032000000040000000010000000
+      0000440065007400610069006C00330000000400000000100000000000440065
+      007400610069006C003400000004000000001000000000004400650074006100
+      69006C00350000000400000000100000000000440065007400610069006C0036
+      00000007000000001400040000004100630063006500730073006F0072007900
+      00000000000018140000001A0000000000420069006E006100720079004F0062
+      006A0065006300740000000E000000000E000800000048006500690067006800
+      74000000000000000000F0BF0E000000000C0008000000570069006400740068
+      000000000000000000F0BF150000000010000400000056006900730069006200
+      6C0065000000FFFFFFFF04000000000A00000000004E0061006D006500000007
+      0000000008000400000054006100670000000000000007000000000A00040000
+      0054006100670031000000000000001500000000100004000000430068006500
+      63006B006500640000000000000007000000001200040000004900740065006D
+      005400790070006500000000000000180C0000000A001A000000490063006F00
+      6E00000054004400720061007700500069006300740075007200650000000400
+      00000014000000000049006D006100670065004E0061006D0065000000170000
+      0000180000000000470049004600460069006C00650044006100740061000000
+      04000000000A060A0000004E0061006D00650000000D54F0790000490063006F
+      006E0000000400000000100606000000430061007000740069006F006E000000
+      076898980000FE560768000004000000000C0600000000470072006F00750070
+      0000000652C47E00000700000000200A04000000500069006300740075007200
+      6500440072006100770054007900700065000000D87E36527B7C8B5700000000
+      00000700000000160A0400000049006D0061006700650049006E006400650078
+      000000FE5647720B4E07680000000000000400000000140A0000000049006D00
+      6100670065004E0061006D0065000000FE5647720D54F0790000040000000012
+      0C00000000460069006C0065004E0061006D0065000000FE5647728765F64E0D
+      54000004000000001A0E000000005200650073006F0075007200630065004E00
+      61006D0065000000FE564772448D906E0D54F07900000400000000080A000000
+      00550072006C000000FE564772FE94A563000015000000001810040000004900
+      730043006C006900700052006F0075006E00640000002F6626546A52C1881062
+      0657625F000000000000180C00000008001A0000005000690063000000540044
+      0072006100770050006900630074007500720065000000040000000014000000
+      000049006D006100670065004E0061006D006500000017000000001800000000
+      00470049004600460069006C0065004400610074006100000004000000000A06
+      080000004E0061006D00650000000D54F0790000500069006300000004000000
+      00100606000000430061007000740069006F006E000000076898980000FE5647
+      72000004000000000C0600000000470072006F007500700000000652C47E0000
+      0700000000200A04000000500069006300740075007200650044007200610077
+      0054007900700065000000D87E36527B7C8B570000000000000700000000160A
+      0400000049006D0061006700650049006E006400650078000000FE5647720B4E
+      07680000FFFFFFFF0400000000140A0000000049006D006100670065004E0061
+      006D0065000000FE5647720D54F07900000400000000120C0000000046006900
+      6C0065004E0061006D0065000000FE5647728765F64E0D54000004000000001A
+      0E000000005200650073006F0075007200630065004E0061006D0065000000FE
+      564772448D906E0D54F07900000400000000080A00000000550072006C000000
+      FE564772FE94A563000015000000001810040000004900730043006C00690070
+      0052006F0075006E00640000002F6626546A52C18810620657625F0000000000
+      0007000000001200040000004900740065006D00540079007000650000000000
+      0000040000000010000A000000430061007000740069006F006E0000003F530D
+      5428753762000004000000000E0016000000440065007400610069006C000000
+      32003000310038002E00300031002E0032003200000004000000001000100000
+      00440065007400610069006C00310000007D5903540CFFD97E2A4E7D59C48B00
+      00040000000010001C000000440065007400610069006C00320000004655B65B
+      3A00228C228CB24E0CFF226BCE8F0B4E216BC1541D5C00000400000000100000
+      000000440065007400610069006C003300000004000000001000000000004400
+      65007400610069006C0034000000040000000010000000000044006500740061
+      0069006C00350000000400000000100000000000440065007400610069006C00
+      3600000007000000001400040000004100630063006500730073006F00720079
+      00000000000000}
+    Properties.EnableBuffer = False
+    Properties.HeaderDesignerPanel = idpFilter
+    Properties.ItemDesignerPanel = idpList
+    OnPrepareDrawItem = lbListPrepareDrawItem
+    object idpList: TSkinFMXItemDesignerPanel
+      ParentMouseEvent = False
+      DirectUIVisible = False
+      ComponentTypeUseKind = ctukDefault
+      MaterialUseKind = mukSelfOwn
+      KeepSelfOwnMaterial = True
+      SelfOwnMaterial.BackColor.Color = claWhite
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+      MouseDownFocus = False
+      Align = Bottom
+      Position.Y = 415.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 354.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Properties.IsPreview = False
+      Properties.PreviewItem.Selected = False
+      Properties.PreviewItem.Checked = False
+      Properties.PreviewItem.Height = -1.000000000000000000
+      Properties.PreviewItem.Visible = True
+      Properties.PreviewItem.Color = claNull
+      Properties.PreviewItem.Width = -1.000000000000000000
+      Properties.PreviewItem.Icon.IsClipRound = False
+      Properties.PreviewItem.Pic.IsClipRound = False
+      Properties.PreviewItem.Tag = 0
+      Properties.PreviewItem.Tag1 = 0
+      Properties.PreviewItem.ItemType = sitDefault
+      Properties.PreviewItem.IsParent = False
+      Properties.PreviewItem.Expanded = True
+      Properties.PreviewItem.Childs.Data = {140000000000000400000000005C000000}
+      Properties.PreviewItem.Accessory = satNone
+      Properties.ItemCaptionBindingControl = lblUserName
+      Properties.ItemDetailBindingControl = lblScoreTime
+      Properties.ItemDetail1BindingControl = lblEvaluate
+      Properties.ItemDetail2BindingControl = lblShopReply
+      Properties.ItemIconBindingControl = imgHead
+      Properties.ItemStringsBindingControlCollection = <>
+      object imgHead: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.PictureVertAlign = pvaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 70.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionHorzType = dpphtCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 54.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.PictureDrawType = pdtImageList
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHeadList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object lblUserName: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCaptionParam.FontSize = 14.000000000000000000
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Size = 14.000000000000000000
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Position.X = 63.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Caption = #21311#21517#29992#25143
+        Text = #21311#21517#29992#25143
+        Properties.AutoSize = False
+      end
+      object imgUserStar1: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 60.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 62.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 17.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHomeStarList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgUserStar2: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 60.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 74.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 17.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHomeStarList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgUserStar3: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 60.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 88.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 17.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHomeStarList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgUserStar4: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 60.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 101.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 17.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHomeStarList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgUserStar5: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 60.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 114.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 17.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.ImageIndex = 0
+        Properties.Picture.SkinImageList = dmEasyServiceCommonMaterial.imgHomeStarList
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object lblScoreValue: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claCoral
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claCoral
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claCoral
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Position.X = 133.000000000000000000
+        Position.Y = 40.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Caption = #36229#36190
+        Text = #36229#36190
+        Properties.AutoSize = False
+      end
+      object lblScoreTime: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaRight
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Anchors = [akTop, akRight]
+        Position.X = 160.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 152.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Caption = '2018.01.22'
+        Text = '2018.01.22'
+        Properties.AutoSize = False
+      end
+      object lblEvaluate: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claYellow
+        SelfOwnMaterial.BackColor.FillColor.Color = claYellow
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawCaptionParam.FontSize = 14.000000000000000000
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Size = 14.000000000000000000
+        SelfOwnMaterial.DrawCaptionParam.IsWordWrap = True
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 64.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 248.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        Caption = #22909#21507#65292#32473#20010#22909#35780
+        Text = #22909#21507#65292#32473#20010#22909#35780
+        Properties.AutoSize = False
+      end
+      object lblShopReply: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightgray
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightgray
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawCaptionParam.IsWordWrap = True
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 72.000000000000000000
+        Position.Y = 104.000000000000000000
+        Size.Width = 232.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        Caption = #21830#23478':'#35874#35874#20146#65292#27426#36814#19979#27425#21697#23581
+        Text = #21830#23478':'#35874#35874#20146#65292#27426#36814#19979#27425#21697#23581
+        Properties.AutoSize = False
+      end
+      object lvGoodsName: TSkinFMXListView
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.IndicatorColor = claBlack
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.LoadingPicture.IsClipRound = False
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.DrawLoadingCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableAutoCenterPosition = False
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableLoadingImageBiggerEffect = False
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.EnableLoadingImageRotateEffect = True
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.LoadingCaption = #27491#22312#21047#26032'...'
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.DecidedLoadCaption = #26494#24320#21047#26032
+        SelfOwnMaterial.PullDownRefreshPanelMaterial.UnDecidedLoadCaption = #19979#25289#21047#26032
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.IndicatorColor = claBlack
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.LoadingPicture.IsClipRound = False
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.DrawLoadingCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableAutoCenterPosition = False
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableLoadingImageBiggerEffect = False
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.EnableLoadingImageRotateEffect = True
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.LoadingCaption = #27491#22312#21152#36733'...'
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.DecidedLoadCaption = #26494#24320#21152#36733#26356#22810
+        SelfOwnMaterial.PullUpLoadMorePanelMaterial.UnDecidedLoadCaption = #19978#25289#21152#36733#26356#22810
+        SelfOwnMaterial.DrawEmptyContentCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawEmptyContentCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawEmptyContentCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawEmptyContentDescriptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.ItemBackNormalPicture.IsClipRound = False
+        SelfOwnMaterial.ItemBackHoverPicture.IsClipRound = False
+        SelfOwnMaterial.ItemBackDownPicture.IsClipRound = False
+        SelfOwnMaterial.ItemBackPushedPicture.IsClipRound = False
+        SelfOwnMaterial.DrawItemBackColorParam.Color = claWhite
+        SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.ItemAccessoryPicture.IsClipRound = False
+        SelfOwnMaterial.IsDrawCenterItemRect = False
+        SelfOwnMaterial.DrawCenterItemRectParam.Color = xFFEDEDED
+        SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawCenterItemRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsSimpleDrawItemDevide = True
+        SelfOwnMaterial.DrawItemDevideParam.Color = xFFEDEDED
+        SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.ItemAccessoryPicture.IsClipRound = False
+        SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackNormalPicture.IsClipRound = False
+        SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackHoverPicture.IsClipRound = False
+        SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackDownPicture.IsClipRound = False
+        SelfOwnMaterial.DefaultTypeItemMaterial.ItemBackPushedPicture.IsClipRound = False
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.Color = claWhite
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DefaultTypeItemMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.ItemAccessoryPicture.IsClipRound = False
+        SelfOwnMaterial.Item1TypeItemMaterial.ItemBackNormalPicture.IsClipRound = False
+        SelfOwnMaterial.Item1TypeItemMaterial.ItemBackHoverPicture.IsClipRound = False
+        SelfOwnMaterial.Item1TypeItemMaterial.ItemBackDownPicture.IsClipRound = False
+        SelfOwnMaterial.Item1TypeItemMaterial.ItemBackPushedPicture.IsClipRound = False
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.Color = claWhite
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemBackColorParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemCaptionParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail2Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail3Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail4Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail5Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontTrimming = fttNone
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.Item1TypeItemMaterial.DrawItemDetail6Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawSpaceParam.Color = claWhite
+        SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawSpaceParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsSimpleDrawGroupRoundRect = False
+        SelfOwnMaterial.IsSimpleDrawGroupBeginDevide = True
+        SelfOwnMaterial.IsSimpleDrawGroupEndDevide = True
+        SelfOwnMaterial.DrawGroupBeginDevideParam.Color = xFFEDEDED
+        SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupBeginDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupEndDevideParam.Color = xFFEDEDED
+        SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawGroupEndDevideParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsAutoAdjustItemDesignerPanelSize = True
+        SelfOwnMaterial.IsDrawRowLine = False
+        SelfOwnMaterial.IsDrawRowBeginLine = False
+        SelfOwnMaterial.IsDrawRowEndLine = False
+        SelfOwnMaterial.IsDrawColLine = False
+        SelfOwnMaterial.IsDrawColBeginLine = False
+        SelfOwnMaterial.IsDrawColEndLine = False
+        SelfOwnMaterial.DrawRowLineParam.Color.Color = xFFD4D0C8
+        SelfOwnMaterial.DrawRowLineParam.PenWidth = 1.000000000000000000
+        SelfOwnMaterial.DrawColLineParam.Color.Color = xFFD4D0C8
+        SelfOwnMaterial.DrawColLineParam.PenWidth = 1.000000000000000000
+        MouseDownFocus = False
+        ClipChildren = True
+        Position.X = 104.000000000000000000
+        Position.Y = 297.000000000000000000
+        Size.Width = 193.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        VertScrollBar.ParentMouseEvent = False
+        VertScrollBar.DirectUIVisible = False
+        VertScrollBar.ComponentTypeUseKind = ctukDefault
+        VertScrollBar.MaterialUseKind = mukSelfOwn
+        VertScrollBar.KeepSelfOwnMaterial = True
+        VertScrollBar.SelfOwnMaterial.BackColor.Color = claWhite
+        VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.ThumbBtnMinSize = 20
+        VertScrollBar.SelfOwnMaterial.ThumbBtnDrawSize = 4
+        VertScrollBar.SelfOwnMaterial.IsDefaultDrawThumbBtn = True
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.Color = x64000000
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.FillColor.Color = x64000000
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        VertScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        VertScrollBar.MouseDownFocus = False
+        VertScrollBar.Position.X = 185.000000000000000000
+        VertScrollBar.Size.Width = 7.000000000000000000
+        VertScrollBar.Size.Height = 41.000000000000000000
+        VertScrollBar.Size.PlatformDefault = False
+        VertScrollBar.Properties.AutoSize = False
+        VertScrollBar.Properties.Kind = sbVertical
+        VertScrollBar.Properties.SmallChange = 1
+        VertScrollBar.Properties.LargeChange = 10
+        VertScrollBar.Properties.CanOverRangeTypes = [cortMin, cortMax]
+        HorzScrollBar.ParentMouseEvent = False
+        HorzScrollBar.DirectUIVisible = False
+        HorzScrollBar.ComponentTypeUseKind = ctukDefault
+        HorzScrollBar.MaterialUseKind = mukSelfOwn
+        HorzScrollBar.KeepSelfOwnMaterial = True
+        HorzScrollBar.SelfOwnMaterial.BackColor.Color = claWhite
+        HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnMinSize = 20
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnDrawSize = 4
+        HorzScrollBar.SelfOwnMaterial.IsDefaultDrawThumbBtn = True
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.Color = x64000000
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.FillColor.Color = x64000000
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        HorzScrollBar.SelfOwnMaterial.ThumbBtnRectParam.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        HorzScrollBar.MouseDownFocus = False
+        HorzScrollBar.Position.Y = 33.000000000000000000
+        HorzScrollBar.Size.Width = 193.000000000000000000
+        HorzScrollBar.Size.Height = 7.000000000000000000
+        HorzScrollBar.Size.PlatformDefault = False
+        HorzScrollBar.Properties.AutoSize = False
+        HorzScrollBar.Properties.Kind = sbHorizontal
+        HorzScrollBar.Properties.Max = 1.000000000000000000
+        HorzScrollBar.Properties.SmallChange = 1
+        HorzScrollBar.Properties.LargeChange = 10
+        HorzScrollBar.Properties.CanOverRangeTypes = []
+        ScrollControlCorner.ParentMouseEvent = False
+        ScrollControlCorner.DirectUIVisible = False
+        ScrollControlCorner.ComponentTypeUseKind = ctukDefault
+        ScrollControlCorner.MaterialUseKind = mukSelfOwn
+        ScrollControlCorner.KeepSelfOwnMaterial = True
+        ScrollControlCorner.SelfOwnMaterial.BackColor.Color = claWhite
+        ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        ScrollControlCorner.SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        ScrollControlCorner.MouseDownFocus = False
+        ScrollControlCorner.Position.X = 186.000000000000000000
+        ScrollControlCorner.Position.Y = 34.000000000000000000
+        ScrollControlCorner.Size.Width = 7.000000000000000000
+        ScrollControlCorner.Size.Height = 7.000000000000000000
+        ScrollControlCorner.Size.PlatformDefault = False
+        Properties.ContentWidth = -1.000000000000000000
+        Properties.ContentHeight = -1.000000000000000000
+        Properties.EnableAutoPullDownRefreshPanel = False
+        Properties.EnableAutoPullUpLoadMorePanel = False
+        Properties.VertCanOverRangeTypes = [cortMin, cortMax]
+        Properties.HorzCanOverRangeTypes = []
+        Properties.VertScrollBarShowType = sbstAutoCoverShow
+        Properties.HorzScrollBarShowType = sbstNone
+        Properties.MultiSelect = False
+        Properties.IsAutoSelected = True
+        Properties.ItemHeight = 33.000000000000000000
+        Properties.ItemSpace = 5.000000000000000000
+        Properties.ItemSpaceType = sistDefault
+        Properties.SelectedItemHeight = -1.000000000000000000
+        Properties.ItemHeightCalcType = isctSeparate
+        Properties.ItemPanDragGestureDirection = ipdgdtLeft
+        Properties.IsEmptyContent = False
+        Properties.EmptyContentPicture.IsClipRound = False
+        Properties.IsEnabledCenterItemSelectMode = False
+        Properties.ItemWidth = 105.000000000000000000
+        Properties.SelectedItemWidth = -1.000000000000000000
+        Properties.ItemWidthCalcType = isctSeparate
+        Properties.ItemLayoutType = iltHorizontal
+        Properties.ItemColorType = sictNone
+        Properties.Items.Data = {
+          140000020000000400000000005C00000018140000001A000000000042006900
+          6E006100720079004F0062006A0065006300740000000E000000000E00080000
+          004800650069006700680074000000000000000000F0BF0E000000000C000800
+          0000570069006400740068000000000000000000544015000000001000040000
+          00560069007300690062006C0065000000FFFFFFFF04000000000A0000000000
+          4E0061006D006500000007000000000800040000005400610067000000000000
+          0007000000000A00040000005400610067003100000000000000150000000010
+          000400000043006800650063006B006500640000000000000007000000001200
+          040000004900740065006D005400790070006500000000000000180C0000000A
+          001A000000490063006F006E0000005400440072006100770050006900630074
+          007500720065000000040000000014000000000049006D006100670065004E00
+          61006D00650000001700000000180000000000470049004600460069006C0065
+          004400610074006100000004000000000A060A0000004E0061006D0065000000
+          0D54F0790000490063006F006E00000004000000001006060000004300610070
+          00740069006F006E000000076898980000FE560768000004000000000C060000
+          0000470072006F007500700000000652C47E00000700000000200A0400000050
+          00690063007400750072006500440072006100770054007900700065000000D8
+          7E36527B7C8B570000000000000700000000160A0400000049006D0061006700
+          650049006E006400650078000000FE5647720B4E07680000FFFFFFFF04000000
+          00140A0000000049006D006100670065004E0061006D0065000000FE5647720D
+          54F07900000400000000120C00000000460069006C0065004E0061006D006500
+          0000FE5647728765F64E0D54000004000000001A0E000000005200650073006F
+          0075007200630065004E0061006D0065000000FE564772448D906E0D54F07900
+          000400000000080A00000000550072006C000000FE564772FE94A56300001500
+          0000001810040000004900730043006C006900700052006F0075006E00640000
+          002F6626546A52C18810620657625F000000000000180C00000008001A000000
+          5000690063000000540044007200610077005000690063007400750072006500
+          0000040000000014000000000049006D006100670065004E0061006D00650000
+          001700000000180000000000470049004600460069006C006500440061007400
+          6100000004000000000A06080000004E0061006D00650000000D54F079000050
+          006900630000000400000000100606000000430061007000740069006F006E00
+          0000076898980000FE564772000004000000000C0600000000470072006F0075
+          00700000000652C47E00000700000000200A0400000050006900630074007500
+          72006500440072006100770054007900700065000000D87E36527B7C8B570000
+          000000000700000000160A0400000049006D0061006700650049006E00640065
+          0078000000FE5647720B4E07680000FFFFFFFF0400000000140A000000004900
+          6D006100670065004E0061006D0065000000FE5647720D54F079000004000000
+          00120C00000000460069006C0065004E0061006D0065000000FE5647728765F6
+          4E0D54000004000000001A0E000000005200650073006F007500720063006500
+          4E0061006D0065000000FE564772448D906E0D54F07900000400000000080A00
+          000000550072006C000000FE564772FE94A56300001500000000181004000000
+          4900730043006C006900700052006F0075006E00640000002F6626546A52C188
+          10620657625F00000000000007000000001200040000004900740065006D0054
+          0079007000650000000000000004000000001000060000004300610070007400
+          69006F006E000000AB622884000004000000000E000000000044006500740061
+          0069006C0000000400000000100000000000440065007400610069006C003100
+          00000400000000100000000000440065007400610069006C0032000000040000
+          0000100000000000440065007400610069006C00330000000400000000100000
+          000000440065007400610069006C003400000004000000001000000000004400
+          65007400610069006C0035000000040000000010000000000044006500740061
+          0069006C00360000000700000000140004000000410063006300650073007300
+          6F007200790000000000000018140000001A0000000000420069006E00610072
+          0079004F0062006A0065006300740000000E000000000E000800000048006500
+          69006700680074000000000000000000F0BF0E000000000C0008000000570069
+          0064007400680000000000000000005A40150000000010000400000056006900
+          7300690062006C0065000000FFFFFFFF04000000000A00000000004E0061006D
+          0065000000070000000008000400000054006100670000000000000007000000
+          000A000400000054006100670031000000000000001500000000100004000000
+          43006800650063006B0065006400000000000000070000000012000400000049
+          00740065006D005400790070006500000000000000180C0000000A001A000000
+          490063006F006E00000054004400720061007700500069006300740075007200
+          65000000040000000014000000000049006D006100670065004E0061006D0065
+          0000001700000000180000000000470049004600460069006C00650044006100
+          74006100000004000000000A060A0000004E0061006D00650000000D54F07900
+          00490063006F006E000000040000000010060600000043006100700074006900
+          6F006E000000076898980000FE560768000004000000000C0600000000470072
+          006F007500700000000652C47E00000700000000200A04000000500069006300
+          7400750072006500440072006100770054007900700065000000D87E36527B7C
+          8B570000000000000700000000160A0400000049006D0061006700650049006E
+          006400650078000000FE5647720B4E07680000FFFFFFFF0400000000140A0000
+          000049006D006100670065004E0061006D0065000000FE5647720D54F0790000
+          0400000000120C00000000460069006C0065004E0061006D0065000000FE5647
+          728765F64E0D54000004000000001A0E000000005200650073006F0075007200
+          630065004E0061006D0065000000FE564772448D906E0D54F079000004000000
+          00080A00000000550072006C000000FE564772FE94A563000015000000001810
+          040000004900730043006C006900700052006F0075006E00640000002F662654
+          6A52C18810620657625F000000000000180C00000008001A0000005000690063
+          0000005400440072006100770050006900630074007500720065000000040000
+          000014000000000049006D006100670065004E0061006D006500000017000000
+          00180000000000470049004600460069006C0065004400610074006100000004
+          000000000A06080000004E0061006D00650000000D54F0790000500069006300
+          00000400000000100606000000430061007000740069006F006E000000076898
+          980000FE564772000004000000000C0600000000470072006F00750070000000
+          0652C47E00000700000000200A04000000500069006300740075007200650044
+          0072006100770054007900700065000000D87E36527B7C8B5700000000000007
+          00000000160A0400000049006D0061006700650049006E006400650078000000
+          FE5647720B4E07680000FFFFFFFF0400000000140A0000000049006D00610067
+          0065004E0061006D0065000000FE5647720D54F07900000400000000120C0000
+          0000460069006C0065004E0061006D0065000000FE5647728765F64E0D540000
+          04000000001A0E000000005200650073006F0075007200630065004E0061006D
+          0065000000FE564772448D906E0D54F07900000400000000080A000000005500
+          72006C000000FE564772FE94A563000015000000001810040000004900730043
+          006C006900700052006F0075006E00640000002F6626546A52C1881062065762
+          5F00000000000007000000001200040000004900740065006D00540079007000
+          6500000000000000040000000010000C000000430061007000740069006F006E
+          0000000F612759295262976167000004000000000E0000000000440065007400
+          610069006C0000000400000000100000000000440065007400610069006C0031
+          0000000400000000100000000000440065007400610069006C00320000000400
+          000000100000000000440065007400610069006C003300000004000000001000
+          00000000440065007400610069006C0034000000040000000010000000000044
+          0065007400610069006C00350000000400000000100000000000440065007400
+          610069006C003600000007000000001400040000004100630063006500730073
+          006F0072007900000000000000}
+        Properties.EnableBuffer = False
+        Properties.ItemDesignerPanel = idpGoods
+        Properties.ColCount = -1
+        Properties.ItemCountPerLine = -1
+        Properties.IsItemCountFitControl = True
+        Properties.ViewType = lvtIcon
+      end
+      object imgScore: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 80.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Enabled = True
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 62.000000000000000000
+        Position.Y = 301.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 21
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Picture.PNG = {
+          89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+          DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          03F649444154785EED9A4F52DB3014C6138761D80127686ED0DCA0905D562D27
+          809E003841E1048413504E00ACB20909BD019CA0700260073390F4FBECE78CAC
+          F86F6A8920FB37E391E4406C7D7AEFE9494AA3A6A6A6A6A6C234A5B4CA783CEE
+          4CA7D3AFA8B69BCDE6D5F6F6F66DF0897DAC0B707D7D7DE679DE9E347D5E5E5E
+          9E5657572F71FF10623CC96D2B58150023DF47B11FB4E6A1106B6B6B3F21C2A5
+          DC328E3501D0F9368ABF412B931D5B227852DA2062F6E018D70EAE53C48367FF
+          8E004B3813C18C634D80F7F7F72DA986F439CAB80E1008DB10E14EEE37E0061B
+          288E829659AC09D06AB5BE499562FC51831DEB10614BB3845D1B56604500BD23
+          10636EDA131118245574AB291D5B16A08F64D254A7073E6705884D7C600591FB
+          7015375C00E4B580863E2398C68A00FA0C8091BE91EA1CAFAFAF53A95AC18A00
+          18D52F5265FD41AAB1C814680DE302700658595999B900227DEE850F668B7BA9
+          1AC38605FC903224D1FC21961EF53FBF006F6F6FFAE2272DC7EF4819627C996C
+          54008CE8816AFE9201268E2A3EDF956A48A2B594853101D0F90E1635BFA4E903
+          9F4ECCEF192BF0F9CC02B8366076284D6394BE1C464736F0F2FB08767A67B9F3
+          A3C78319B416142741CB779D7BCFF30AC50009B0B7DD6EF73CB8934D6E0138A2
+          E8D87769CE81CFB8A2EBA8A31882FB0F78B94EDA88E2FB2958C4621685E2C1F5
+          B8BB94B9A7902900477432995C603416CACBD1F93B747E2BCB9CF11C5AC745D0
+          2A0DEE2EFD967A2CA931809D47601A2FD279749C29ED719ECE1319AD63F9BF52
+          400C3A411F52D713A916B0A0595EE162F4E66687F1795C855604018F203A779C
+          43CEF11EFA6ED48C54010683C1A3969A1EE28ACCCD78605F7D201E567A602D02
+          AD16EF748F775A679B1BADBD5E6FD3FF3086C497E517A1780C5A3EB14A0E87C3
+          1B04BED96ECF470B40F0EEF47B35A7D8C47BC5BA615A0CD0A3B95573FE1F8AEC
+          23184F853F08DFFC4392469F3829809A8B30FD966A2CCE0900FF8F4CD9102375
+          3DE1A205E8394BB50480C9EB02A42EA99D13409D92910F64AE289D1200FE1F99
+          BA910C65EE27B8660185CC9FB82E40B52C0079BFEAFF0FF0FFCCECD51901E0FF
+          6D75E196C7FF894B1650D8FF89CB0254CB029000CDF624E0FFCFF0FFEA5800F7
+          2ED405505EFF27AE58C042FE4F5C15A05A1600FF8FA4C0F0FF6A09A02E80B236
+          40743EBD00088091E3368891DBFF499A00FA17E99BA44B01465C3FB7C86DFE24
+          750B7B341A717F5DFD790B0F4A220F984C267D750AC2DFE801C9143C8BDC534F
+          AD98FF77BBDDDC3BC224550098576907969628FC23EBCC430C58C12DAC403D6A
+          5A56781AACFFD23493CC2088CED3C44E83D6F241B347C1912FDC7992FB188BCB
+          4D1414A3908F19847B7D377973FE9A9A9A9A9A1A9D46E31FF443902520A07C7C
+          0000000049454E44AE426082}
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgScorePic1: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureVertAlign = pvaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 80.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionHorzType = dpphtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 65.000000000000000000
+        Position.Y = 213.000000000000000000
+        Size.Width = 104.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgScorePic3: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.PictureVertAlign = pvaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 80.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 64.000000000000000000
+        Position.Y = 133.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgScorePic4: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.PictureVertAlign = pvaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 80.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 168.000000000000000000
+        Position.Y = 133.000000000000000000
+        Size.Width = 105.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgScorePic2: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawPictureParam.PictureHorzAlign = phaCenter
+        SelfOwnMaterial.DrawPictureParam.PictureVertAlign = pvaCenter
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.Height = 80.000000000000000000
+        SelfOwnMaterial.DrawPictureParam.DrawRectSetting.PositionVertType = dppvtCenter
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 169.000000000000000000
+        Position.Y = 213.000000000000000000
+        Size.Width = 104.000000000000000000
+        Size.Height = 81.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+      object imgScorePic: TSkinFMXImage
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claWhite
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawPictureParam.IsAutoFit = True
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaTop
+        MouseDownFocus = False
+        Position.X = 64.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 129.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 26
+        Properties.AutoSize = False
+        Properties.Picture.IsClipRound = False
+        Properties.Animated = False
+        Properties.AnimateSpeed = 10.000000000000000000
+        Properties.GIFDelayExp = 12
+        Properties.CurrentRotateAngle = 0
+        Properties.Rotated = False
+        Properties.RotateSpeed = 5.000000000000000000
+        Properties.RotateIncrement = 20
+        Properties.IsToolBar = False
+      end
+    end
+    object idpGoods: TSkinFMXItemDesignerPanel
+      ParentMouseEvent = False
+      DirectUIVisible = False
+      ComponentTypeUseKind = ctukDefault
+      MaterialUseKind = mukSelfOwn
+      KeepSelfOwnMaterial = True
+      SelfOwnMaterial.BackColor.Color = claWhite
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+      MouseDownFocus = False
+      Position.X = 128.000000000000000000
+      Position.Y = 544.000000000000000000
+      Size.Width = 104.000000000000000000
+      Size.Height = 31.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Properties.IsPreview = False
+      Properties.PreviewItem.Selected = False
+      Properties.PreviewItem.Checked = False
+      Properties.PreviewItem.Height = -1.000000000000000000
+      Properties.PreviewItem.Visible = True
+      Properties.PreviewItem.Color = claNull
+      Properties.PreviewItem.Width = -1.000000000000000000
+      Properties.PreviewItem.Icon.IsClipRound = False
+      Properties.PreviewItem.Pic.IsClipRound = False
+      Properties.PreviewItem.Tag = 0
+      Properties.PreviewItem.Tag1 = 0
+      Properties.PreviewItem.ItemType = sitDefault
+      Properties.PreviewItem.IsParent = False
+      Properties.PreviewItem.Expanded = True
+      Properties.PreviewItem.Childs.Data = {140000000000000400000000005C000000}
+      Properties.PreviewItem.Accessory = satNone
+      Properties.ItemCaptionBindingControl = lblGoodsName
+      Properties.ItemStringsBindingControlCollection = <>
+      object lblGoodsName: TSkinFMXLabel
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightblue
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        MouseDownFocus = False
+        Align = Client
+        Size.Width = 104.000000000000000000
+        Size.Height = 31.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Caption = #24847#22823#21033#38754#26465
+        Text = #24847#22823#21033#38754#26465
+        Properties.AutoSize = False
+      end
+    end
+    object idpFilter: TSkinFMXItemDesignerPanel
+      ParentMouseEvent = False
+      DirectUIVisible = False
+      ComponentTypeUseKind = ctukDefault
+      MaterialUseKind = mukSelfOwn
+      KeepSelfOwnMaterial = True
+      SelfOwnMaterial.BackColor.Color = claWhite
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+      SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+      MouseDownFocus = False
+      Align = Bottom
+      HitTest = False
+      Position.Y = 328.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 87.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnResize = idpFilterResize
+      Properties.IsPreview = False
+      Properties.PreviewItem.Selected = False
+      Properties.PreviewItem.Checked = False
+      Properties.PreviewItem.Height = -1.000000000000000000
+      Properties.PreviewItem.Visible = True
+      Properties.PreviewItem.Color = claNull
+      Properties.PreviewItem.Width = -1.000000000000000000
+      Properties.PreviewItem.Icon.IsClipRound = False
+      Properties.PreviewItem.Pic.IsClipRound = False
+      Properties.PreviewItem.Tag = 0
+      Properties.PreviewItem.Tag1 = 0
+      Properties.PreviewItem.ItemType = sitDefault
+      Properties.PreviewItem.IsParent = False
+      Properties.PreviewItem.Expanded = True
+      Properties.PreviewItem.Childs.Data = {140000000000000400000000005C000000}
+      Properties.PreviewItem.Accessory = satNone
+      Properties.ItemStringsBindingControlCollection = <>
+      object btnFilter: TSkinFMXButton
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColor.Color = claDodgerblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.EffectTypes = [drpetFillColorChange]
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.IsAutoCenterIconAndCaption = False
+        SelfOwnMaterial.DrawDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawHelpTextParam.FontColor = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawHelpTextParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawHelpTextParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.FontColor.Color = claWhite
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.EffectTypes = [dtpetFontColorChange]
+        SelfOwnMaterial.NormalPicture.IsClipRound = False
+        SelfOwnMaterial.HoverPicture.IsClipRound = False
+        SelfOwnMaterial.DownPicture.IsClipRound = False
+        SelfOwnMaterial.DisabledPicture.IsClipRound = False
+        SelfOwnMaterial.FocusedPicture.IsClipRound = False
+        SelfOwnMaterial.PushedPicture.IsClipRound = False
+        MouseDownFocus = False
+        Position.X = 16.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnFilterClick
+        Caption = #20840#37096
+        Text = #20840#37096
+        Properties.AutoSize = False
+        Properties.IsAutoPush = False
+        Properties.IsPushed = False
+        Properties.Icon.IsClipRound = False
+        Properties.PushedIcon.IsClipRound = False
+        Properties.ButtonIndex = -1
+        Properties.PushedGroupIndex = 0
+      end
+      object btnFilter1: TSkinFMXButton
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColor.Color = claDodgerblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.EffectTypes = [drpetFillColorChange]
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.IsAutoCenterIconAndCaption = False
+        SelfOwnMaterial.DrawDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawHelpTextParam.FontColor = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawHelpTextParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawHelpTextParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.FontColor.Color = claWhite
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.EffectTypes = [dtpetFontColorChange]
+        SelfOwnMaterial.NormalPicture.IsClipRound = False
+        SelfOwnMaterial.HoverPicture.IsClipRound = False
+        SelfOwnMaterial.DownPicture.IsClipRound = False
+        SelfOwnMaterial.DisabledPicture.IsClipRound = False
+        SelfOwnMaterial.FocusedPicture.IsClipRound = False
+        SelfOwnMaterial.PushedPicture.IsClipRound = False
+        MouseDownFocus = False
+        Position.X = 88.000000000000000000
+        Position.Y = 9.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        OnClick = btnFilter1Click
+        Caption = #26377#22270
+        Text = #26377#22270
+        Properties.AutoSize = False
+        Properties.IsAutoPush = False
+        Properties.IsPushed = True
+        Properties.Icon.IsClipRound = False
+        Properties.PushedIcon.IsClipRound = False
+        Properties.ButtonIndex = -1
+        Properties.PushedGroupIndex = 0
+      end
+      object btnFilter2: TSkinFMXButton
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColor.Color = claDodgerblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.EffectTypes = [drpetFillColorChange]
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.IsAutoCenterIconAndCaption = False
+        SelfOwnMaterial.DrawDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawHelpTextParam.FontColor = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawHelpTextParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawHelpTextParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.FontColor.Color = claWhite
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.EffectTypes = [dtpetFontColorChange]
+        SelfOwnMaterial.NormalPicture.IsClipRound = False
+        SelfOwnMaterial.HoverPicture.IsClipRound = False
+        SelfOwnMaterial.DownPicture.IsClipRound = False
+        SelfOwnMaterial.DisabledPicture.IsClipRound = False
+        SelfOwnMaterial.FocusedPicture.IsClipRound = False
+        SelfOwnMaterial.PushedPicture.IsClipRound = False
+        MouseDownFocus = False
+        Position.X = 162.000000000000000000
+        Position.Y = 9.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnClick = btnFilter2Click
+        Caption = #22909#35780
+        Text = #22909#35780
+        Properties.AutoSize = False
+        Properties.IsAutoPush = False
+        Properties.IsPushed = False
+        Properties.Icon.IsClipRound = False
+        Properties.PushedIcon.IsClipRound = False
+        Properties.ButtonIndex = -1
+        Properties.PushedGroupIndex = 0
+      end
+      object btnFilter3: TSkinFMXButton
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColor.Color = claDodgerblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.EffectTypes = [drpetFillColorChange]
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.IsAutoCenterIconAndCaption = False
+        SelfOwnMaterial.DrawDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawHelpTextParam.FontColor = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawHelpTextParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawHelpTextParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.FontColor.Color = claWhite
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.EffectTypes = [dtpetFontColorChange]
+        SelfOwnMaterial.NormalPicture.IsClipRound = False
+        SelfOwnMaterial.HoverPicture.IsClipRound = False
+        SelfOwnMaterial.DownPicture.IsClipRound = False
+        SelfOwnMaterial.DisabledPicture.IsClipRound = False
+        SelfOwnMaterial.FocusedPicture.IsClipRound = False
+        SelfOwnMaterial.PushedPicture.IsClipRound = False
+        MouseDownFocus = False
+        Position.X = 236.000000000000000000
+        Position.Y = 9.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnClick = btnFilter3Click
+        Caption = #19968#33324
+        Text = #19968#33324
+        Properties.AutoSize = False
+        Properties.IsAutoPush = False
+        Properties.IsPushed = False
+        Properties.Icon.IsClipRound = False
+        Properties.PushedIcon.IsClipRound = False
+        Properties.ButtonIndex = -1
+        Properties.PushedGroupIndex = 0
+      end
+      object btnFilter4: TSkinFMXButton
+        ParentMouseEvent = False
+        DirectUIVisible = False
+        ComponentTypeUseKind = ctukDefault
+        MaterialUseKind = mukSelfOwn
+        KeepSelfOwnMaterial = True
+        SelfOwnMaterial.BackColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.IsFill = True
+        SelfOwnMaterial.BackColor.FillColor.Color = claLightcyan
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseDownEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.MouseOverEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColor.Color = claDodgerblue
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.PushedEffect.EffectTypes = [drpetFillColorChange]
+        SelfOwnMaterial.BackColor.DrawEffectSetting.DisabledEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.BackColor.DrawEffectSetting.FocusedEffect.FillColorChangeType = cctNone
+        SelfOwnMaterial.IsTransparent = False
+        SelfOwnMaterial.IsAutoCenterIconAndCaption = False
+        SelfOwnMaterial.DrawDetailParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetailParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetailParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawDetail1Param.FontTrimming = fttNone
+        SelfOwnMaterial.DrawDetail1Param.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawDetail1Param.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawHelpTextParam.FontColor = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawHelpTextParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawHelpTextParam.FontHorzAlign = fhaLeft
+        SelfOwnMaterial.DrawHelpTextParam.FontVertAlign = fvaTop
+        SelfOwnMaterial.DrawCaptionParam.FontColor = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.DrawFont.FontColor.Color = claGray
+        SelfOwnMaterial.DrawCaptionParam.FontTrimming = fttNone
+        SelfOwnMaterial.DrawCaptionParam.FontHorzAlign = fhaCenter
+        SelfOwnMaterial.DrawCaptionParam.FontVertAlign = fvaCenter
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.FontColor.Color = claWhite
+        SelfOwnMaterial.DrawCaptionParam.DrawEffectSetting.PushedEffect.EffectTypes = [dtpetFontColorChange]
+        SelfOwnMaterial.NormalPicture.IsClipRound = False
+        SelfOwnMaterial.HoverPicture.IsClipRound = False
+        SelfOwnMaterial.DownPicture.IsClipRound = False
+        SelfOwnMaterial.DisabledPicture.IsClipRound = False
+        SelfOwnMaterial.FocusedPicture.IsClipRound = False
+        SelfOwnMaterial.PushedPicture.IsClipRound = False
+        MouseDownFocus = False
+        Position.X = 16.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnFilter4Click
+        Caption = #24046#35780
+        Text = #24046#35780
+        Properties.AutoSize = False
+        Properties.IsAutoPush = False
+        Properties.IsPushed = False
+        Properties.Icon.IsClipRound = False
+        Properties.PushedIcon.IsClipRound = False
+        Properties.ButtonIndex = -1
+        Properties.PushedGroupIndex = 0
+      end
+    end
+  end
+end
