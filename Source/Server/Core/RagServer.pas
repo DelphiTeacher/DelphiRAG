@@ -31,6 +31,9 @@ type
 var
   GlobalRagServer: TRagServer;
 
+
+
+
 implementation
 
   { TRagServer }
@@ -141,7 +144,7 @@ begin
     //删除字段
     'is_deleted',
     //主键字段
-    'fid',
+    '_id',
     //默认排序
     'createtime DESC',
     True);

@@ -18,7 +18,7 @@ REM 输出目录
 set OUTPUT_DIR=-E.\Win32\Debug
 
 REM 包含文件路径
-set INCLUDE_PATH=-I"d:\rad studio 13\lib\Win32\debug";"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug"
+set INCLUDE_PATH=-I"d:\rad studio 13\lib\Win32\debug";"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug";"D:\三方控件\TMS Sparkle\source";"D:\三方控件\TMS Sparkle\source\core";"D:\三方控件\kbmMemTablePro_77510\Source";"D:\三方控件\kbmMW5_02_10\Source";"D:\三方控件\kbmMW5_02_10\Source\Ciphers";"D:\三方控件\kbmMW5_02_10\Source\Compression";"D:\三方控件\kbmMW5_02_10\Source\Hashes";"D:\三方控件\kbmhttpsys5_02_10"
 
 REM 运行时包输出目录
 set BPL_OUTPUT=-LEC:\Users\Public\Documents\Embarcadero\Studio\37.0\Bpl
@@ -39,7 +39,7 @@ REM 资源文件路径
 set RESOURCE_PATH=-R"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug"
 
 REM 单元路径
-set UNIT_PATH=-U"d:\rad studio 13\lib\Win32\debug";"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug"
+set UNIT_PATH=-U"d:\rad studio 13\lib\Win32\debug";"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug";"D:\三方控件\TMS Sparkle\source";"D:\三方控件\TMS Sparkle\source\core";"D:\三方控件\kbmMemTablePro_77510\Source";"D:\三方控件\kbmMW5_02_10\Source";"D:\三方控件\kbmMW5_02_10\Source\Ciphers";"D:\三方控件\kbmMW5_02_10\Source\Compression";"D:\三方控件\kbmMW5_02_10\Source\Hashes";"D:\三方控件\kbmhttpsys5_02_10"
 
 REM 其他编译器选项
 set OTHER_OPTIONS=-CC -V -VN

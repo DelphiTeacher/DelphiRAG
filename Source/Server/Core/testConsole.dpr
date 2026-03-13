@@ -6,46 +6,20 @@
 
 uses
   Classes,
+  kbmMWGlobal,
   System.SysUtils,
   DocumentReader,
   NativePDFDocumentReader,
   TokenTextSplitter,
-  RagServer;
+  RagServer,
+  uTestUnit in 'uTestUnit.pas';
 
 
-procedure testSpliter;
+
+
+
 var
-  I:Integer;
-  pdfreader:TNativePDFDocumentReader;
-  parseResult:TParseDocumentResult;
-  spliter:TTokenTextSplitter;
-  spliterResult:TStringList;begin
-    // 测试PDF文档的解析
-    pdfreader:= TNativePDFDocumentReader.Create;
-    parseResult:=pdfreader.Read('D:\DelphiRAG\Source\Win32\Debug\spring_ai_alibaba_quickstart.pdf');
-    WriteLn(parseResult.MarkdownContent);
-
-    // 文档分片
-    spliter:=TTokenTextSplitter.Create();
-    spliterResult:=spliter.Split(parseResult.MarkdownContent);
-    for i := 0 to spliterResult.Count-1 do
-    begin
-      WriteLn('------------分片'+IntToStr(i+1)+'--------------');
-      WriteLn(spliterResult[i]);
-    end;
-    spliter.Free;
-    spliterResult.Free;
-    
-
-
-    pdfreader.Free;
-    parseResult.Free;
-  
-end;
-
-
-
-
+  ADesc:String;
 begin
   try
     { TODO -oUser -cConsole Main : Insert code here }
@@ -60,8 +34,16 @@ begin
 
 
     // 创建知识库
+//    testAddDatasetToDB(ADesc);
+//    WriteLn('testAddDatasetToDB '+ADesc);
 
-    // 添加文档、分片、向量化
+
+
+    // 添加文档
+
+
+
+    // 分片、向量化
 
     // 处理向量化
 
@@ -70,6 +52,8 @@ begin
 
     // 添加模型
 
+
+    ReadLn;
 
 
 
