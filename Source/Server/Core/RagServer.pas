@@ -1,4 +1,4 @@
-unit RagServer;
+﻿unit RagServer;
 
 interface
 
@@ -38,7 +38,7 @@ implementation
 constructor TRagServer.Create(AOwner: TComponent);
 begin
   inherited;
-  FDBModule := TDataBaseModule.Create(Self);
+  FDBModule := TDataBaseModule.Create();
   Init;
 end;
 
@@ -82,7 +82,7 @@ begin
     //默认排序
     '',
     True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
+  GlobalCommonRestIntfList.Add(AIntfItem);
   {$ENDREGION}
 
 
@@ -114,7 +114,7 @@ begin
     //默认排序
     '',
     True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
+  GlobalCommonRestIntfList.Add(AIntfItem);
   {$ENDREGION}
 
   
@@ -126,7 +126,7 @@ begin
     //名称
     '知识库',
     //数据库连接
-    RagCenterRestService.RagCenterServiceModule.DBModule,
+    FDBModule,
     //表名
     'datasets',
     '',
@@ -145,7 +145,7 @@ begin
     //默认排序
     'createtime DESC',
     True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
+  GlobalCommonRestIntfList.Add(AIntfItem);
   {$ENDREGION}
 
 
@@ -157,7 +157,7 @@ begin
     //名称
     '知识库数据集表',
     //数据库连接
-    RagCenterRestService.RagCenterServiceModule.DBModule,
+    FDBModule,
     //表名
     'dataset_collections',
     '',
@@ -176,8 +176,71 @@ begin
     //默认排序
     'createtime DESC',
     True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
+  GlobalCommonRestIntfList.Add(AIntfItem);
   {$ENDREGION}
+
+
+
+  {$REGION '数据集解析文本内容表'}
+  AIntfItem:=TCommonRestIntfItem.Create(
+    //名称
+    'buffer_rawtexts',
+    //名称
+    '知识库数据集表',
+    //数据库连接
+    FDBModule,
+    //表名
+    'buffer_rawtexts',
+    '',
+//    'SELECT * FROM ( '
+//      +' SELECT '
+//      +' A.*, '
+//      +' B.name as introducer_name,B.phone as introducer_phone '
+//      +' FROM tbluser A '
+//      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
+//      +' ) view_user ',
+    '',
+    //删除字段
+    '',
+    //主键字段
+    '_id',
+    //默认排序
+    'createtime DESC',
+    True);
+  GlobalCommonRestIntfList.Add(AIntfItem);
+  {$ENDREGION}
+
+
+
+  {$REGION '知识库数据集分片表'}
+  AIntfItem:=TCommonRestIntfItem.Create(
+    //名称
+    'dataset_datas',
+    //名称
+    '知识库数据集分片表',
+    //数据库连接
+    FDBModule,
+    //表名
+    'dataset_datas',
+    '',
+//    'SELECT * FROM ( '
+//      +' SELECT '
+//      +' A.*, '
+//      +' B.name as introducer_name,B.phone as introducer_phone '
+//      +' FROM tbluser A '
+//      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
+//      +' ) view_user ',
+    '',
+    //删除字段
+    '',
+    //主键字段
+    '_id',
+    //默认排序
+    'createtime DESC',
+    True);
+  GlobalCommonRestIntfList.Add(AIntfItem);
+  {$ENDREGION}
+
 
 
 end;
@@ -194,13 +257,13 @@ begin
   Self.FDBModule.DoPrepareStop;  
 end;
 
-initialization
-  GlobalRagServer:=TRagServer.Create(nil);
-  GlobalRagServer.FDBModule.DBConfigFileName:='RagCenterDBConfig.ini';
-  GlobalRagServer.FDBModule.DBConfig.FDBDataBaseName:='rag_center';
+// initialization
+//   GlobalRagServer:=TRagServer.Create(nil);
+//   GlobalRagServer.FDBModule.DBConfigFileName:='RagCenterDBConfig.ini';
+//   GlobalRagServer.FDBModule.DBConfig.FDBDataBaseName:='rag_center';
 
-finalization
-  FreeAndNil(GlobalRagServer);
+// finalization
+//   FreeAndNil(GlobalRagServer);
 
 
 end.

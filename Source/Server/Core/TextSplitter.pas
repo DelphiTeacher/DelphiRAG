@@ -3,7 +3,7 @@
 interface
 
 uses
-  Classes,System.SysUtils, System.Generics.Collections;
+  Classes,System.SysUtils, System.Generics.Collections,XSuperObject,DocumentReader;
 
 type
   // 文档切片设置类
@@ -11,15 +11,17 @@ type
   private
     FChunkSize: Integer;
     FChunkOverlap: Integer;
-    FSeparators: TStringList;
+    FSeparator: String;
   public
     constructor Create;
     destructor Destroy; override;
 
+    procedure LoadFromJSON(AJson: ISuperObject);
+
     // 属性
     property ChunkSize: Integer read FChunkSize write FChunkSize;
     property ChunkOverlap: Integer read FChunkOverlap write FChunkOverlap;
-    property Separators: TStringList read FSeparators;
+    property Separator: String read FSeparator write FSeparator;
 
   end;
 
@@ -39,7 +41,32 @@ type
 
   end;
 
+// 将文档进行分片
+function SplitDocument(AChunkSettingJson:ISuperObject;AParseDocumentResult:TParseDocumentResult):TStringList;
+
+
 implementation
+
+uses
+  TokenTextSplitter;
+
+// 将文档进行分片
+function SplitDocument(AChunkSettingJson:ISuperObject;AParseDocumentResult:TParseDocumentResult):TStringList;
+var
+  ATextSplitter:TTextSplitter;
+begin
+  ATextSplitter:=nil;
+  // 根据不同的分片设置，创建不同的分片类
+  if AChunkSettingJson.S['chunkSplitMode'] = 'size' then
+  begin
+    ATextSplitter:=TTokenTextSplitter.Create;
+    
+  end;
+  ATextSplitter.FSetting.LoadFromJSON(AChunkSettingJson);
+
+  Result:=ATextSplitter.Split(AParseDocumentResult.MarkdownContent);
+
+end;
 
 { TTextSplitterSetting }
 
@@ -48,19 +75,26 @@ begin
   inherited Create;
   FChunkSize := 1000;
   FChunkOverlap := 0;
-  FSeparators := TStringList.Create;
+  // FSeparators := TStringList.Create;
 
   // 初始化默认分隔符
-  FSeparators.Add(#13#10);  // 换行符
-  FSeparators.Add(#10);     // 换行符
+  // FSeparators.Add(#13#10);  // 换行符
+  FSeparator:=#10;     // 换行符
   // FSeparators.Add(' ');     // 空格
   // FSeparators.Add('');      // 空字符串（最后的分隔符）
 end;
 
 destructor TTextSplitterSetting.Destroy;
 begin
-  FSeparators.Free;
+  // FSeparators.Free;
   inherited Destroy;
+end;
+
+procedure TTextSplitterSetting.LoadFromJSON(AJson: ISuperObject);
+begin
+  FChunkSize := AJson.I['chunkSize'];
+  // FChunkOverlap := AJson.I['chunkOverlap'];
+  FSeparator := AJson.S['chunkSplitter'];
 end;
 
 // procedure TTextSplitterSetting.SetChunkSize(Value: Integer);

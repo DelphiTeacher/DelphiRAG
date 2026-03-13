@@ -12,13 +12,18 @@ uses
   FileManageRestService in 'FileManageRestService.pas' {srvFileManageRestService: TkbmMWCustomSmartService},
   uOpenPlatformServerManager in 'uOpenPlatformServerManager.pas',
   ServerMainForm in 'ServerMainForm.pas' {frmServerMain},
-  ServerDataBaseModule in 'ServerDataBaseModule.pas',
-  uTableCommonRestCenter in 'uTableCommonRestCenter.pas',
   TableCommonRestService in 'TableCommonRestService.pas',
   WebFileHttpService in 'WebFileHttpService.pas',
   ImageIndyHttpServerModule in 'ImageIndyHttpServerModule.pas',
   uGenerateThumb in 'uGenerateThumb.pas',
-  RagCenterRestService in 'RagCenterRestService.pas';
+  RagCenterRestService in 'RagCenterRestService.pas',
+  DocumentReader in 'Core\DocumentReader.pas',
+  uDocSplit in 'Core\uDocSplit.pas',
+  TextSplitter in 'Core\TextSplitter.pas',
+  TokenTextSplitter in 'Core\TokenTextSplitter.pas',
+  NativePDFDocumentReader in 'Core\NativePDFDocumentReader.pas',
+  ServerDataBaseModule in 'Core\ServerDataBaseModule.pas',
+  uTableCommonRestCenter in 'Core\uTableCommonRestCenter.pas';
 
 {$R *.res}
 

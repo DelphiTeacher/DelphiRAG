@@ -154,13 +154,18 @@
         <DCCReference Include="ServerMainForm.pas">
             <Form>frmServerMain</Form>
         </DCCReference>
-        <DCCReference Include="ServerDataBaseModule.pas"/>
-        <DCCReference Include="uTableCommonRestCenter.pas"/>
         <DCCReference Include="TableCommonRestService.pas"/>
         <DCCReference Include="WebFileHttpService.pas"/>
         <DCCReference Include="ImageIndyHttpServerModule.pas"/>
         <DCCReference Include="uGenerateThumb.pas"/>
         <DCCReference Include="RagCenterRestService.pas"/>
+        <DCCReference Include="Core\DocumentReader.pas"/>
+        <DCCReference Include="Core\uDocSplit.pas"/>
+        <DCCReference Include="Core\TextSplitter.pas"/>
+        <DCCReference Include="Core\TokenTextSplitter.pas"/>
+        <DCCReference Include="Core\NativePDFDocumentReader.pas"/>
+        <DCCReference Include="Core\ServerDataBaseModule.pas"/>
+        <DCCReference Include="Core\uTableCommonRestCenter.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

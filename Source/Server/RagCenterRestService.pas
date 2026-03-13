@@ -656,7 +656,6 @@ begin
 
 
   {$REGION '知识库表'}
-  //用户表的临时变量的增删改查接口
   AIntfItem:=TCommonRestIntfItem.Create(
     //名称
     'datasets',
@@ -683,9 +682,38 @@ begin
     'createtime DESC',
     True);
   CommonRestServiceModule.IntfList.Add(AIntfItem);
-  AIntfItem.WhereKeyTranslatorList.Add('keyword','name,phone');
-//  AIntfItem.WhereKeyTranslatorList.Add('introducer_keyword','introducer_name,introducer_phone');
-  {$ENDREGION '用户表'}
+  {$ENDREGION}
+
+
+
+  {$REGION '知识库数据集表'}
+  AIntfItem:=TCommonRestIntfItem.Create(
+    //名称
+    'dataset_collections',
+    //名称
+    '知识库数据集表',
+    //数据库连接
+    RagCenterRestService.RagCenterServiceModule.DBModule,
+    //表名
+    'dataset_collections',
+    '',
+//    'SELECT * FROM ( '
+//      +' SELECT '
+//      +' A.*, '
+//      +' B.name as introducer_name,B.phone as introducer_phone '
+//      +' FROM tbluser A '
+//      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
+//      +' ) view_user ',
+    '',
+    //删除字段
+    '',
+    //主键字段
+    '_id',
+    //默认排序
+    'createtime DESC',
+    True);
+  CommonRestServiceModule.IntfList.Add(AIntfItem);
+  {$ENDREGION}
 
 
 

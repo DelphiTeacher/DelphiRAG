@@ -1,4 +1,4 @@
-unit DocumentReader;
+﻿unit DocumentReader;
 
 interface
 
