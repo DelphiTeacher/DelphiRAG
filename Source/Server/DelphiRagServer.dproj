@@ -152,7 +152,6 @@
         </DCCReference>
         <DCCReference Include="TableCommonRestService.pas"/>
         <DCCReference Include="WebFileHttpService.pas"/>
-        <DCCReference Include="uGenerateThumb.pas"/>
         <DCCReference Include="RagCenterRestService.pas"/>
         <DCCReference Include="Core\DocumentReader.pas"/>
         <DCCReference Include="Core\uDocSplit.pas"/>
@@ -164,6 +163,7 @@
         <DCCReference Include="Core\RagServer.pas"/>
         <DCCReference Include="Core\UploadFile.pas"/>
         <DCCReference Include="Core\FileIndyHttpServerModule.pas"/>
+        <DCCReference Include="Core\uGenerateThumb.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

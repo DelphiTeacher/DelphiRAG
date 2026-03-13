@@ -13,7 +13,6 @@ uses
   ServerMainForm in 'ServerMainForm.pas' {frmServerMain},
   TableCommonRestService in 'TableCommonRestService.pas',
   WebFileHttpService in 'WebFileHttpService.pas',
-  uGenerateThumb in 'uGenerateThumb.pas',
   RagCenterRestService in 'RagCenterRestService.pas',
   DocumentReader in 'Core\DocumentReader.pas',
   uDocSplit in 'Core\uDocSplit.pas',
@@ -24,7 +23,8 @@ uses
   uTableCommonRestCenter in 'Core\uTableCommonRestCenter.pas',
   RagServer in 'Core\RagServer.pas',
   UploadFile in 'Core\UploadFile.pas',
-  FileIndyHttpServerModule in 'Core\FileIndyHttpServerModule.pas';
+  FileIndyHttpServerModule in 'Core\FileIndyHttpServerModule.pas',
+  uGenerateThumb in 'Core\uGenerateThumb.pas';
 
 {$R *.res}
 

@@ -31,29 +31,67 @@ var
   ACode:Integer;
   AFileName:String;
   AFileExt:String;
-  AStringStream:TStringStream;
   AFileSize:Integer;
   ARemoteFilePath:String;
+  ASuperObject:ISuperObject;
+  AIntfItem:TCommonRestIntfItem;
 begin
+  Result:=False;
   AFileName:=AMimeFileName;
   AFileExt:=ExtractFileExt(AMimeFileName);
 
-  AFileSize:=AStringStream.Size;
+  AFileSize:=AFileStream.Size;
 
   //保存成文件
   ARemoteFilePath:='';
-  if ProcessUploadFile(GetApplicationPath,//ExtractFilePath(Application.ExeName),
+  if not ProcessUploadFile(GetApplicationPath,//ExtractFilePath(Application.ExeName),
                        '',
                        AFileName,
                        AFileExt,
                        ABucketName+PathDelim,
-                       AStringStream,
+                       AFileStream,
                        ARemoteFilePath,
                        ACode,
                        ADesc) then
   begin
-    //上传成功
+
   end;
+
+
+  ASuperObject:=SO();
+  ASuperObject.S['_id']:=CreateGUIDString;
+  ASuperObject.S['teamId']:='';
+  ASuperObject.S['tmbId']:='';
+  ASuperObject.I['length']:=AFileSize;
+  ASuperObject.I['chunkSize']:=261120;
+  ASuperObject.S['filename']:=AFileName;
+  ASuperObject.S['filepath']:=ARemoteFilePath;
+
+
+  AIntfItem:=GlobalCommonRestIntfList.Find(ABucketName+'_files');
+  if AIntfItem=nil then
+  begin
+    ADesc:='不存在'+ABucketName+'_files'+'接口';
+    Exit;
+  end;
+
+  //新增
+  AIntfItem.AddRecord(AIntfItem.DBModule,
+                      nil,
+                      '',
+                      ASuperObject,
+                      nil,
+                      ACode,
+                      ADesc,
+                      ADataJson
+                      );
+
+
+
+
+
+  //上传成功
+  Result:=True;
 end;
 
 function ProcessUploadFileRequest(RequestStream:TStream;var ADesc:String;var ADataJson:ISuperObject):Boolean;

@@ -39,8 +39,11 @@ begin
 
 
 
-    // 添加文档
+    // 上传文档
+    // testUploadFile('D:\DelphiRAG\Source\Server\Core\spring_ai_alibaba_quickstart.pdf',ADesc);
 
+    // 添加数据集
+    testCreateCollectionByFile('FA4B9372E2E74EC6A3634BF808A47604','B14B1860334F47DCB10471061594EF10',ADesc);
 
 
     // 分片、向量化

@@ -37,12 +37,14 @@ var
   AMemoryStream:TMemoryStream;
 begin
   AMemoryStream:=TMemoryStream.Create;
-  AMemoryStream.LoadFromFile(AFilePath);
+  try
+    AMemoryStream.LoadFromFile(AFilePath);
+    AMemoryStream.Position:=0;
 
-  UploadFile.ProcessUploadFileStream(ExtractFileName(AFilePath),AMemoryStream,'dataset',ADesc,ADataJson);
-
-
-  AMemoryStream.Free;
+    UploadFile.ProcessUploadFileStream(ExtractFileName(AFilePath),AMemoryStream,'dataset',ADesc,ADataJson);
+  finally
+    AMemoryStream.Free;
+  end;
 end;
 
 function testCreateCollectionByFile(AFileId:String;ADatasetId:String;var ADesc:String):Boolean;
@@ -59,10 +61,36 @@ begin
   ARecordJson.S['_id']:=CreateGUIDString();
   ARecordJson.S['teamId']:='1044';
   ARecordJson.S['tmbId']:='admin';
+  ARecordJson.S['datasetId']:=ADatasetId;
   ARecordJson.S['type']:='file';
-  ARecordJson.S['status']:='activate';
-  ARecordJson.S['vectorModel']:='text-embedding-v3';
-  ARecordJson.S['intro']:='test';
+  ARecordJson.S['name']:='spring_ai_alibaba_quickstart.pdf';
+  ARecordJson.B['forbid']:=False;
+  // 分片设置
+  ARecordJson.S['traningType']:='chunk';
+  ARecordJson.S['chunkSettingMode']:='auto';
+  ARecordJson.S['chunkSplitMode']:='size';
+  ARecordJson.I['chunkSize']:=1024;
+  ARecordJson.I['indexSize']:=1024;
+  
+  ARecordJson.S['fileId']:=AFileId;
+  ARecordJson.S['state']:='wait';
+
+  AIntfItem:=GlobalCommonRestIntfList.Find('dataset_collections');
+  if AIntfItem=nil then
+  begin
+    ADesc:='不存在dataset_collections接口';
+    Exit;
+  end;
+  //新增
+  AIntfItem.AddRecord(AIntfItem.DBModule,
+                      nil,
+                      '',
+                      ARecordJson,
+                      nil,
+                      ACode,
+                      ADesc,
+                      ADataJson
+                      );
 
 
 

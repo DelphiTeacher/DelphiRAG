@@ -83,7 +83,7 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;VCL;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;VCL;VCL.Imaging;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>testConsole</SanitizedProjectName>
         <DCC_UnitSearchPath>D:\三方控件\PDFium Component Suite\Source;D:\MyFilesNew\OrangeUI\OrangeProjectCommon;D:\三方控件\TMS Sparkle\source;D:\三方控件\TMS Sparkle\source\core;D:\三方控件\kbmMemTablePro_77510\Source;D:\三方控件\kbmMW5_02_10\Source;D:\三方控件\kbmMW5_02_10\Source\Ciphers;D:\三方控件\kbmMW5_02_10\Source\Compression;D:\三方控件\kbmMW5_02_10\Source\Hashes;D:\三方控件\kbmhttpsys5_02_10;D:\MyFilesNew\OrangeUI\OrangeProjectCommon;D:\MyFilesNew\OrangeUI\OrangeProjectCommon\OrangeUI;D:\三方控件\Devart\UniDAC for RAD Studio 12\Lib\Win32;D:\三方控件\mxscomm\comps\mORMot;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_Locale>2052</VerInfo_Locale>
