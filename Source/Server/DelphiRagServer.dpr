@@ -8,13 +8,11 @@ uses
   uFileCommon,
   uServerLogicCommon in 'uServerLogicCommon.pas',
   UserCenterRestService in 'UserCenterRestService.pas' {srvUserCenterRestService: TkbmMWCustomSmartService},
-  FileIndyHttpServerModule in 'FileIndyHttpServerModule.pas' {dmFileIndyHttpServer: TDataModule},
   FileManageRestService in 'FileManageRestService.pas' {srvFileManageRestService: TkbmMWCustomSmartService},
   uOpenPlatformServerManager in 'uOpenPlatformServerManager.pas',
   ServerMainForm in 'ServerMainForm.pas' {frmServerMain},
   TableCommonRestService in 'TableCommonRestService.pas',
   WebFileHttpService in 'WebFileHttpService.pas',
-  ImageIndyHttpServerModule in 'ImageIndyHttpServerModule.pas',
   uGenerateThumb in 'uGenerateThumb.pas',
   RagCenterRestService in 'RagCenterRestService.pas',
   DocumentReader in 'Core\DocumentReader.pas',
@@ -23,7 +21,10 @@ uses
   TokenTextSplitter in 'Core\TokenTextSplitter.pas',
   NativePDFDocumentReader in 'Core\NativePDFDocumentReader.pas',
   ServerDataBaseModule in 'Core\ServerDataBaseModule.pas',
-  uTableCommonRestCenter in 'Core\uTableCommonRestCenter.pas';
+  uTableCommonRestCenter in 'Core\uTableCommonRestCenter.pas',
+  RagServer in 'Core\RagServer.pas',
+  UploadFile in 'Core\UploadFile.pas',
+  FileIndyHttpServerModule in 'Core\FileIndyHttpServerModule.pas';
 
 {$R *.res}
 

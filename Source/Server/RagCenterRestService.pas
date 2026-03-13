@@ -95,6 +95,7 @@ uses
 
 
   uOpenCommon,
+  RagServer,
 //  uDBTableCopy,
 
   uOpenPlatformServerManager,
@@ -213,10 +214,11 @@ type
     //从别的APP复制配置到新APP
     function CustomCopyConfigFromApp(ASQLDBHelper:TBaseDBHelper;ASourceAppID:Integer;ADestAppID:Integer;ADestAppJson:ISuperObject;var ADesc:String):Boolean;override;
   public
+
     constructor Create; override;
     destructor Destroy; override;
 
-    procedure Init;override;
+//    procedure Init;override;
     //准备启动
     function DoPrepareStart(var AError:String): Boolean; override;
     //准备停止
@@ -635,6 +637,11 @@ var
 begin
   Result:=Inherited DoPrepareStart(AError);
 
+  GlobalRagServer:=TRagServer.Create(nil);
+  GlobalRagServer.FDBModule.DBConfigFileName:='RagCenterDBConfig.ini';
+  GlobalRagServer.FDBModule.DBConfig.FDBDataBaseName:='rag_center';
+  GlobalRagServer.Start;
+
 
 
 end;
@@ -642,82 +649,84 @@ end;
 function TRagCenterServiceModule.DoPrepareStop: Boolean;
 begin
 
+  GlobalRagServer.Stop;
+
 
   Result:=Inherited DoPrepareStop;
 
 
 end;
 
-procedure TRagCenterServiceModule.Init;
-var
-  AIntfItem:TCommonRestIntfItem;
-  ADataFlowAction:TDataFlowAction;
-begin
-
-
-  {$REGION '知识库表'}
-  AIntfItem:=TCommonRestIntfItem.Create(
-    //名称
-    'datasets',
-    //名称
-    '知识库',
-    //数据库连接
-    RagCenterRestService.RagCenterServiceModule.DBModule,
-    //表名
-    'datasets',
-    '',
-//    'SELECT * FROM ( '
-//      +' SELECT '
-//      +' A.*, '
-//      +' B.name as introducer_name,B.phone as introducer_phone '
-//      +' FROM tbluser A '
-//      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
-//      +' ) view_user ',
-    '',
-    //删除字段
-    'is_deleted',
-    //主键字段
-    'fid',
-    //默认排序
-    'createtime DESC',
-    True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
-  {$ENDREGION}
-
-
-
-  {$REGION '知识库数据集表'}
-  AIntfItem:=TCommonRestIntfItem.Create(
-    //名称
-    'dataset_collections',
-    //名称
-    '知识库数据集表',
-    //数据库连接
-    RagCenterRestService.RagCenterServiceModule.DBModule,
-    //表名
-    'dataset_collections',
-    '',
-//    'SELECT * FROM ( '
-//      +' SELECT '
-//      +' A.*, '
-//      +' B.name as introducer_name,B.phone as introducer_phone '
-//      +' FROM tbluser A '
-//      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
-//      +' ) view_user ',
-    '',
-    //删除字段
-    '',
-    //主键字段
-    '_id',
-    //默认排序
-    'createtime DESC',
-    True);
-  CommonRestServiceModule.IntfList.Add(AIntfItem);
-  {$ENDREGION}
-
-
-
-end;
+//procedure TRagCenterServiceModule.Init;
+//var
+//  AIntfItem:TCommonRestIntfItem;
+//  ADataFlowAction:TDataFlowAction;
+//begin
+//
+//
+//  {$REGION '知识库表'}
+//  AIntfItem:=TCommonRestIntfItem.Create(
+//    //名称
+//    'datasets',
+//    //名称
+//    '知识库',
+//    //数据库连接
+//    RagCenterRestService.RagCenterServiceModule.DBModule,
+//    //表名
+//    'datasets',
+//    '',
+////    'SELECT * FROM ( '
+////      +' SELECT '
+////      +' A.*, '
+////      +' B.name as introducer_name,B.phone as introducer_phone '
+////      +' FROM tbluser A '
+////      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
+////      +' ) view_user ',
+//    '',
+//    //删除字段
+//    'is_deleted',
+//    //主键字段
+//    'fid',
+//    //默认排序
+//    'createtime DESC',
+//    True);
+//  CommonRestServiceModule.IntfList.Add(AIntfItem);
+//  {$ENDREGION}
+//
+//
+//
+//  {$REGION '知识库数据集表'}
+//  AIntfItem:=TCommonRestIntfItem.Create(
+//    //名称
+//    'dataset_collections',
+//    //名称
+//    '知识库数据集表',
+//    //数据库连接
+//    RagCenterRestService.RagCenterServiceModule.DBModule,
+//    //表名
+//    'dataset_collections',
+//    '',
+////    'SELECT * FROM ( '
+////      +' SELECT '
+////      +' A.*, '
+////      +' B.name as introducer_name,B.phone as introducer_phone '
+////      +' FROM tbluser A '
+////      +' LEFT JOIN tbluser B ON A.appid=B.appid and B.fid=A.bind_introducer_fid '
+////      +' ) view_user ',
+//    '',
+//    //删除字段
+//    '',
+//    //主键字段
+//    '_id',
+//    //默认排序
+//    'createtime DESC',
+//    True);
+//  CommonRestServiceModule.IntfList.Add(AIntfItem);
+//  {$ENDREGION}
+//
+//
+//
+//end;
 
 
 initialization

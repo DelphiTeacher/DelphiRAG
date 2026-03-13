@@ -142,10 +142,6 @@
             <Form>srvUserCenterRestService</Form>
             <DesignClass>TkbmMWCustomSmartService</DesignClass>
         </DCCReference>
-        <DCCReference Include="FileIndyHttpServerModule.pas">
-            <Form>dmFileIndyHttpServer</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="FileManageRestService.pas">
             <Form>srvFileManageRestService</Form>
             <DesignClass>TkbmMWCustomSmartService</DesignClass>
@@ -156,7 +152,6 @@
         </DCCReference>
         <DCCReference Include="TableCommonRestService.pas"/>
         <DCCReference Include="WebFileHttpService.pas"/>
-        <DCCReference Include="ImageIndyHttpServerModule.pas"/>
         <DCCReference Include="uGenerateThumb.pas"/>
         <DCCReference Include="RagCenterRestService.pas"/>
         <DCCReference Include="Core\DocumentReader.pas"/>
@@ -166,6 +161,9 @@
         <DCCReference Include="Core\NativePDFDocumentReader.pas"/>
         <DCCReference Include="Core\ServerDataBaseModule.pas"/>
         <DCCReference Include="Core\uTableCommonRestCenter.pas"/>
+        <DCCReference Include="Core\RagServer.pas"/>
+        <DCCReference Include="Core\UploadFile.pas"/>
+        <DCCReference Include="Core\FileIndyHttpServerModule.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -187,7 +185,6 @@
                     <Source Name="MainSource">DelphiRagServer.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\dclsgcWebSocketsD12.bpl">SGC WebSockets</Excluded_Packages>
                     <Excluded_Packages Name="D:\DelphiThirdPartyComponent\Steema TeeChart Pro VCL FMX Source Code 2023.38\Compiled\Delphi29.win32\Bin\DclTeePro929.bpl">File D:\DelphiThirdPartyComponent\Steema TeeChart Pro VCL FMX Source Code 2023.38\Compiled\Delphi29.win32\Bin\DclTeePro929.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="D:\DelphiThirdPartyComponent\Steema TeeChart Pro VCL FMX Source Code 2023.38\Compiled\Delphi29.win32\Bin\DclFMXTeePro929.bpl">File D:\DelphiThirdPartyComponent\Steema TeeChart Pro VCL FMX Source Code 2023.38\Compiled\Delphi29.win32\Bin\DclFMXTeePro929.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
