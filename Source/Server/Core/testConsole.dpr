@@ -10,14 +10,11 @@ uses
   System.SysUtils,
   DocumentReader,
   NativePDFDocumentReader,
-
   TokenTextSplitter,
   RagServer,
-  uTestUnit in 'uTestUnit.pas';
-
-
-
-
+  uTestUnit in 'uTestUnit.pas',
+  VectorStore in 'VectorStore.pas',
+  PostgreSqlVectorStore in 'PostgreSqlVectorStore.pas';
 
 var
   ADesc:String;

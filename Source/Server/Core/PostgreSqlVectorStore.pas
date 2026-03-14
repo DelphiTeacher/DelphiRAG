@@ -4,6 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, System.Math, System.Generics.Collections,
+  uBaseDBHelper,
   VectorStore, uBaseList, uGenTextEmbedding, uUniDBHelper, Data.DB, ServerDataBaseModule;
 
 type
@@ -30,7 +31,7 @@ implementation
 constructor TPostgreSqlVectorStore.Create(ATableName: string = 'modelData');
 begin
   inherited Create;
-  FDBModule:=TServerDataBaseModule.Create;
+  FDBModule:=TDataBaseModule.Create;
   FTableName := ATableName;
   EnsureTableExists;
 end;
@@ -43,12 +44,13 @@ end;
 
 procedure TPostgreSqlVectorStore.EnsureTableExists;
 var
+  ACode:Integer;
+  ADesc:String;
   SQL: string;
   ASQLDBHelper: TBaseDBHelper;
 begin
   if not FDBModule.GetDBHelperFromPool(ASQLDBHelper,ADesc) then
   begin
-    Result:=ReturnJson(ACode,ADesc,ADataJson).AsJSON;
     Exit;
   end;
   try
@@ -56,14 +58,13 @@ begin
     SQL := Format(
       'CREATE TABLE IF NOT EXISTS %s (' +
       '  id SERIAL PRIMARY KEY,' +
-      '  chunk_id VARCHAR(255) UNIQUE NOT NULL,' +
       '  content TEXT NOT NULL,' +
       '  embedding vector(1536),' +
       '  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP' +
       ')', [FTableName]);
 
     try
-      FDBHelper.ExecuteSQL(SQL);
+      ASQLDBHelper.SelfQuery(SQL);
     except
       on E: Exception do
         raise Exception.Create('Failed to create vector table: ' + E.Message);
@@ -101,11 +102,11 @@ var
   Embedding: TArray<Double>;
   EmbeddingStr: string;
   SQL: string;
+  ADesc:String;
   ASQLDBHelper: TBaseDBHelper;
 begin
   if not FDBModule.GetDBHelperFromPool(ASQLDBHelper,ADesc) then
   begin
-    Result:=ReturnJson(ACode,ADesc,ADataJson).AsJSON;
     Exit;
   end;
   try
@@ -114,8 +115,8 @@ begin
     for i := 0 to AChunks.Count - 1 do
     begin
       Content := AChunks[i];
-      ChunkId := Format('chunk_%d_%d', [i, GetTickCount]);
-      
+//      ChunkId := Format('chunk_%d_%d', [i, GetTickCount]);
+
       // TODO: Call embedding service to generate vector
       // For now, create a placeholder vector
       SetLength(Embedding, 1536);
@@ -132,7 +133,7 @@ begin
         QuotedStr(EmbeddingStr)]);
       
       try
-        FDBHelper.ExecuteSQL(SQL);
+        ASQLDBHelper.SelfQuery(SQL);
       except
         on E: Exception do
           raise Exception.Create('Failed to insert chunk: ' + E.Message);
@@ -146,21 +147,21 @@ end;
 
 procedure TPostgreSqlVectorStore.Delete(AChunkId: String);
 var
+  ADesc:String;
   SQL: string;
   ASQLDBHelper: TBaseDBHelper;
 begin
   if not FDBModule.GetDBHelperFromPool(ASQLDBHelper,ADesc) then
   begin
-    Result:=ReturnJson(ACode,ADesc,ADataJson).AsJSON;
     Exit;
   end;
   try
 
 
-    SQL := Format('DELETE FROM %s WHERE chunk_id = %s', [FTableName, QuotedStr(AChunkId)]);
+    SQL := Format('DELETE FROM %s WHERE _id = %s', [FTableName, QuotedStr(AChunkId)]);
     
     try
-      FDBHelper.ExecuteSQL(SQL);
+      ASQLDBHelper.SelfQuery(SQL);
     except
       on E: Exception do
         raise Exception.Create('Failed to delete chunk: ' + E.Message);
@@ -173,6 +174,7 @@ end;
 
 function TPostgreSqlVectorStore.SimilaritySearch(ASearchRequest: TSearchRequest): TSearchResultList;
 var
+  ADesc:String;
   SQL: string;
   QueryDataSet: TDataSet;
   Embedding: TArray<Double>;
@@ -184,7 +186,6 @@ begin
   Result:=nil;
   if not FDBModule.GetDBHelperFromPool(ASQLDBHelper,ADesc) then
   begin
-    Result:=ReturnJson(ACode,ADesc,ADataJson).AsJSON;
     Exit;
   end;
   try
@@ -213,7 +214,8 @@ begin
       ASearchRequest.TopK]);
     
     try
-      QueryDataSet := FDBHelper.QuerySQL(SQL);
+      ASQLDBHelper.SelfQuery(SQL);
+      QueryDataSet:=ASQLDBHelper.Query;
       if QueryDataSet <> nil then
       begin
         QueryDataSet.First;

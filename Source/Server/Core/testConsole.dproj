@@ -213,6 +213,8 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="uTestUnit.pas"/>
+        <DCCReference Include="VectorStore.pas"/>
+        <DCCReference Include="PostgreSqlVectorStore.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -260,7 +262,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\testConsole.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="..\Win32\Debug\testConsole.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>testConsole.exe</RemoteName>
                         <Overwrite>true</Overwrite>
