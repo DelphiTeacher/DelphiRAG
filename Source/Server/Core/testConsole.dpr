@@ -48,9 +48,10 @@ begin
 
 
     // 分片、向量化
-    testProcessDatasetCollectionTask(ADesc);
+//    testProcessDatasetCollectionTask(ADesc);
 
     // 处理向量化
+    testDataEmbeddingProcessTask(ADesc);
 
     // 知识库搜索功能
 

@@ -1,4 +1,4 @@
-unit VectorStore;
+﻿unit VectorStore;
 
 interface
 
@@ -23,11 +23,9 @@ type
 
 
   IVectorStore = interface
-  private
-  public
-    procedure add(AChunks:TStrings);virtual;abstract;
-    procedure delete(AChunkId:String);virtual;abstract;
-    function similaritySearch(ASearchRequest:TSearchRequest):TSearchResultList;virtual;abstract;
+    procedure add(AChunks:TStrings);
+    procedure delete(AChunkId:String);
+    function similaritySearch(ASearchRequest:TSearchRequest):TSearchResultList;
   end;
 
 implementation

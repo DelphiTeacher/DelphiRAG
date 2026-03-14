@@ -26,7 +26,9 @@ uses
   FileIndyHttpServerModule in 'Core\FileIndyHttpServerModule.pas',
   uGenerateThumb in 'Core\uGenerateThumb.pas',
   uDatasetCollectionProcessTask in 'Core\uDatasetCollectionProcessTask.pas',
-  uDataEmbeddingProcessTask in 'Core\uDataEmbeddingProcessTask.pas';
+  uDataEmbeddingProcessTask in 'Core\uDataEmbeddingProcessTask.pas',
+  VectorStore in 'Core\VectorStore.pas',
+  PostgreSqlVectorStore in 'Core\PostgreSqlVectorStore.pas';
 
 {$R *.res}
 

@@ -14,6 +14,7 @@ uses
   UploadFile,
   uDatasetCollectionProcessTask,
   uTableCommonRestCenter,
+  uDataEmbeddingProcessTask,
   RagServer;
 
 function testSpliter(var ADesc:String):Boolean;
@@ -27,13 +28,21 @@ function testUploadFile(AFilePath:String;var ADesc:String):Boolean;
 function testCreateCollectionByFile(AFileId:String;ADatasetId:String;var ADesc:String):Boolean;
 
 
+// 测试文档解析分片
 function testProcessDatasetCollectionTask(var ADesc:String):Boolean;
+
+
+// 测试文档向量化
+function testDataEmbeddingProcessTask(var ADesc:String):Boolean;
 
 
 implementation
 
 
-
+function testDataEmbeddingProcessTask(var ADesc:String):Boolean;
+begin
+  DoDataEmbeddingProcess(ADesc);
+end;
 
 function testProcessDatasetCollectionTask(var ADesc:String):Boolean;
 begin

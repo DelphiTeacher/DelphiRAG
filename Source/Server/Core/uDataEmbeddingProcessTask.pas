@@ -1,4 +1,4 @@
-unit uDataEmbeddingProcessTask;
+﻿unit uDataEmbeddingProcessTask;
 
 interface
 
@@ -9,7 +9,12 @@ uses
   uTableCommonRestCenter,  
   GenAI.Async.Promise,
 
-  GenAI, GenAI.Types  
+  GenAI, GenAI.Types,
+
+
+  uBaseLog,
+  uDatasetToJson,
+  XSuperObject
   ;
 
 
@@ -17,25 +22,30 @@ uses
 type
   TDataEmbeddingProcessTask = class(TBaseServiceThread)
   public
-
-    Client : IGenAI;
-    function DoDataEmbeddingProcess:Boolean;
     procedure Execute; override;
 
   end;
 
 
+function DoDataEmbeddingProcess(ADesc:String):Boolean;
+
 implementation
 
 
-{ TDataEmbeddingProcessTask }
-
-function TDataEmbeddingProcessTask.DoDataEmbeddingProcess: Boolean;
+function DoDataEmbeddingProcess(ADesc:String): Boolean;
+var
+  Client : IGenAI;
+var
+  ACode:Integer;
+  ADataChunkJson:ISuperObject;
+  ACollectionJson:ISuperObject;
+  ADatasetJson:ISuperObject;
+  Value1:TEmbeddings;
+  AIntfItem:TCommonRestIntfItem;
+  AWhereKeyJsonArray:ISuperArray;
 begin
   Result := False;
 
-  if Client=nil then
-    Client := TGenAI.Create('sk-5c2de62c553f41bdafa7357c390a0079');
 
 
   // 从数据库的dataset_datas表中获取state为wait的记录，表示未向量化的文档片段，然后调用向量化模型，将文档片段转换为向量
@@ -44,7 +54,6 @@ begin
   begin
     // ADesc:='不存在dataset_collections接口';
     uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_datas接口');
-    SleepThread(5000);
     Exit;
   end;
 
@@ -53,7 +62,6 @@ begin
 
   if not AIntfItem.GetRecord('',AWhereKeyJsonArray.AsJSON(),'','',ACode,ADesc,ADataChunkJson) then
   begin
-    SleepThread(5000);
     // 不存在，等久一点
     Exit;
   end;
@@ -64,12 +72,10 @@ begin
   begin
     // ADesc:='不存在dataset_collections接口';
     uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_collections接口');
-    SleepThread(5000);
     Exit;
   end;
   if not AIntfItem.GetRecord('',GetWhereConditions(['_id'],[ADataChunkJson.S['collectionId']]),'','',ACode,ADesc,ACollectionJson) then
   begin
-    SleepThread(5000);
     // 不存在，等久一点
     uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在对应的collection');
     Exit;
@@ -82,12 +88,10 @@ begin
   begin
     // ADesc:='不存在dataset_collections接口';
     uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在datasets接口');
-    SleepThread(5000);
     Exit;
   end;
-  if not AIntfItem.GetRecord('',GetWhereConditions(['_id'],[ACollectionJson.S['datasetId']]),'','',ACode,ADesc,ACollectionJson) then
+  if not AIntfItem.GetRecord('',GetWhereConditions(['_id'],[ACollectionJson.S['datasetId']]),'','',ACode,ADesc,ADatasetJson) then
   begin
-    SleepThread(5000);
     // 不存在，等久一点
     uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在对应的collection');
     Exit;
@@ -96,28 +100,32 @@ begin
   // 找到对应的模型，调用向量化模型
 
 
+  Client := TGenAI.Create('sk-5c2de62c553f41bdafa7357c390a0079');
   Client.BaseURL := 'https://dashscope.aliyuncs.com/compatible-mode/v1';
-  Client.Key := 'sk-5c2de62c553f41bdafa7357c390a0079';
 
   // 向量化模型调用
   Value1 := Client.Embeddings.Create(
     procedure (Params: TEmbeddingsParams)
     begin
       Params.Input([ADataChunkJson.S['q']+ADataChunkJson.S['a']]);
-      Params.Model(ACollectionJson.S['model']);
+      Params.Model(ADatasetJson.S['model']);
       Params.Dimensions(1024);
       Params.EncodingFormat(TEncodingFormat.float);
     end);
 
+
+  //保存到向量数据库中
+
+
+
   Result := True;
 end;
 
+{ TDataEmbeddingProcessTask }
+
 procedure TDataEmbeddingProcessTask.Execute;
 var
-  ADataChunkJson:ISuperObject;
-  ACollectionJson:ISuperObject;
-  ADatasetJson:ISuperObject;
-  Value1:TEmbeddings;
+  ADesc:String;
 begin
 
 
@@ -126,7 +134,11 @@ begin
   while not Terminated do
   begin
 
-    DoDataEmbeddingProcess();
+    if not DoDataEmbeddingProcess(ADesc) then
+    begin
+      SleepThread(5000);
+
+    end;
 
   end;
 

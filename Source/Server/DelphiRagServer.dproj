@@ -166,6 +166,8 @@
         <DCCReference Include="Core\uGenerateThumb.pas"/>
         <DCCReference Include="Core\uDatasetCollectionProcessTask.pas"/>
         <DCCReference Include="Core\uDataEmbeddingProcessTask.pas"/>
+        <DCCReference Include="Core\VectorStore.pas"/>
+        <DCCReference Include="Core\PostgreSqlVectorStore.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
