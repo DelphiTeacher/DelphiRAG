@@ -24,7 +24,9 @@ uses
   RagServer in 'Core\RagServer.pas',
   UploadFile in 'Core\UploadFile.pas',
   FileIndyHttpServerModule in 'Core\FileIndyHttpServerModule.pas',
-  uGenerateThumb in 'Core\uGenerateThumb.pas';
+  uGenerateThumb in 'Core\uGenerateThumb.pas',
+  uDatasetCollectionProcessTask in 'Core\uDatasetCollectionProcessTask.pas',
+  uDataEmbeddingProcessTask in 'Core\uDataEmbeddingProcessTask.pas';
 
 {$R *.res}
 

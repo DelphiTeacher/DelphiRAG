@@ -15,7 +15,7 @@ REM 条件定义
 set CONDITIONAL=-DDEBUG
 
 REM 输出目录
-set OUTPUT_DIR=-E.\Win32\Debug
+set OUTPUT_DIR=-E..\Win32\Debug
 
 REM 包含文件路径
 set INCLUDE_PATH=-I"d:\rad studio 13\lib\Win32\debug";"D:\三方控件\PDFium Component Suite\Source";"d:\rad studio 13\lib\Win32\release";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports";"C:\Users\Administrator\Documents\Embarcadero\Studio\37.0\Imports\Win32";"d:\rad studio 13\Imports";"C:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp";"d:\rad studio 13\includee";"d:\myfilesnew\orangeui\orangeuidesign\dcu\fmx\d13\win32\debug";"D:\三方控件\TMS Sparkle\source";"D:\三方控件\TMS Sparkle\source\core";"D:\三方控件\kbmMemTablePro_77510\Source";"D:\三方控件\kbmMW5_02_10\Source";"D:\三方控件\kbmMW5_02_10\Source\Ciphers";"D:\三方控件\kbmMW5_02_10\Source\Compression";"D:\三方控件\kbmMW5_02_10\Source\Hashes";"D:\三方控件\kbmhttpsys5_02_10"
@@ -27,7 +27,7 @@ REM DCU输出目录（包文件）
 set DCP_OUTPUT=-LNC:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp
 
 REM 单元输出目录
-set UNIT_OUTPUT=-NU.\Win32\Debug
+set UNIT_OUTPUT=-NU..\Win32\Debug
 
 REM 命名空间
 set NAMESPACES=-NSWinapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;System;Xml;Data;Datasnap;Web;Soap;VCL;
@@ -45,7 +45,7 @@ REM 其他编译器选项
 set OTHER_OPTIONS=-CC -V -VN
 
 REM C++生成选项
-set CPP_OPTIONS=-NBC:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp -NHC:\Users\Public\Documents\Embarcadero\Studio\37.0\hpp\Win32 -NO.\Win32\Debug
+set CPP_OPTIONS=-NBC:\Users\Public\Documents\Embarcadero\Studio\37.0\Dcp -NHC:\Users\Public\Documents\Embarcadero\Studio\37.0\hpp\Win32 -NO..\Win32\Debug
 
 REM 项目文件
 set PROJECT_FILE=testConsole.dpr

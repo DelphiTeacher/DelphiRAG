@@ -1350,7 +1350,7 @@ begin
 
 
         ASuperObject:=SO();
-        ASuperObject.S['_id']:=CreateGUIDString;
+//        ASuperObject.S['_id']:=CreateGUIDString;
         ASuperObject.S['teamId']:='';
         ASuperObject.S['tmbId']:='';
         ASuperObject.I['length']:=AFileSize;

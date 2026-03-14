@@ -16,7 +16,7 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    procedure LoadFromJSON(AJson: ISuperObject);
+//    procedure LoadFromJSON(AJson: ISuperObject);
 
     // 属性
     property ChunkSize: Integer read FChunkSize write FChunkSize;
@@ -62,7 +62,7 @@ begin
     ATextSplitter:=TTokenTextSplitter.Create;
     
   end;
-  ATextSplitter.FSetting.LoadFromJSON(AChunkSettingJson);
+  ATextSplitter.FSetting.FChunkSize:=AChunkSettingJson.I['chunkSize'];
 
   Result:=ATextSplitter.Split(AParseDocumentResult.MarkdownContent);
 
@@ -90,12 +90,12 @@ begin
   inherited Destroy;
 end;
 
-procedure TTextSplitterSetting.LoadFromJSON(AJson: ISuperObject);
-begin
-  FChunkSize := AJson.I['chunkSize'];
-  // FChunkOverlap := AJson.I['chunkOverlap'];
-  FSeparator := AJson.S['chunkSplitter'];
-end;
+//procedure TTextSplitterSetting.LoadFromJSON(AJson: ISuperObject);
+//begin
+//  FChunkSize := AJson.I['chunkSize'];
+//  // FChunkOverlap := AJson.I['chunkOverlap'];
+//  FSeparator := AJson.S['chunkSplitter'];
+//end;
 
 // procedure TTextSplitterSetting.SetChunkSize(Value: Integer);
 // begin

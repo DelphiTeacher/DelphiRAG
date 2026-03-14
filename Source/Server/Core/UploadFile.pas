@@ -14,17 +14,50 @@ uses
   IdMessageCoder,
   IdMessageCoderMIME;
 
-
+const
+  BUCKET_DATASET = 'dataset';
+  BUCKET_CHAT = 'chat';
 
 
 function ProcessUploadFileRequest(RequestStream:TStream;var ADesc:String;var ADataJson:ISuperObject):Boolean;
 function ProcessUploadFileStream(AMimeFileName:String;AFileStream:TStream;ABucketName:String;var ADesc:String;var ADataJson:ISuperObject):Boolean;
+function GetFilePathByFileId(ABucketName:String;AFileId:String;var ADesc:String;var ADataJson:ISuperObject;var AFilePath:String):Boolean;
+
 
 implementation
 
 
 
+function GetFilePathByFileId(ABucketName:String;AFileId:String;var ADesc:String;var ADataJson:ISuperObject;var AFilePath:String):Boolean;
+var
+  ACode:Integer;
+  AIntfItem:TCommonRestIntfItem;
+  AWhereKeyJsonArray:ISuperArray;
+begin
+  Result:=False;
 
+  AIntfItem:=GlobalCommonRestIntfList.Find(ABucketName+'_files');
+  if AIntfItem=nil then
+  begin
+    ADesc:='不存在'+ABucketName+'_files'+'接口';
+    Exit;
+  end;
+
+  // 从数据库中查询需要重新处理的知识库数据集
+  AWhereKeyJsonArray:=GetWhereConditionArray(['_id'],[AFileId]);
+
+  if not AIntfItem.GetRecord('',AWhereKeyJsonArray.AsJSON(),'','',ACode,ADesc,ADataJson) then
+  begin
+    //不存在等久一点
+    Exit;
+  end;
+
+
+  AFilePath:=GetApplicationPath+ADataJson.S['filepath'];
+
+  Result:=True;
+
+end;
 
 function ProcessUploadFileStream(AMimeFileName:String;AFileStream:TStream;ABucketName:String;var ADesc:String;var ADataJson:ISuperObject):Boolean;
 var
@@ -59,7 +92,7 @@ begin
 
 
   ASuperObject:=SO();
-  ASuperObject.S['_id']:=CreateGUIDString;
+//  ASuperObject.S['_id']:=CreateGUIDString;
   ASuperObject.S['teamId']:='';
   ASuperObject.S['tmbId']:='';
   ASuperObject.I['length']:=AFileSize;
@@ -219,7 +252,7 @@ begin
 
 
         ASuperObject:=SO();
-        ASuperObject.S['_id']:=CreateGUIDString;
+//        ASuperObject.S['_id']:=CreateGUIDString;
         ASuperObject.S['teamId']:='';
         ASuperObject.S['tmbId']:='';
         ASuperObject.I['length']:=AFileSize;

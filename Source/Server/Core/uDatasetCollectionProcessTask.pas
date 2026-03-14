@@ -13,6 +13,7 @@ uses
   uTableCommonRestCenter,
   DocumentReader,
   TextSplitter,
+  UploadFile,
   
   uDatasetToJson,
   XSuperObject;
@@ -29,9 +30,10 @@ type
 
 
 
+function ProcessDatasetCollectionTask:Boolean;
 
 // 处理数据集
-function ProcessDatasetCollection(ACollectionJson:ISuperObject;var ADesc:String):Boolean;
+function DoProcessDatasetCollection(ACollectionJson:ISuperObject;var ADesc:String):Boolean;
 
 // 将文档解析之后的图片保存到数据库中
 function SaveDocumentImages(ACollectionJson:ISuperObject;AParseDocumentResult:TParseDocumentResult;var ADesc:String):Boolean;
@@ -69,7 +71,7 @@ begin
     AImageItem:=AParseDocumentResult.ImageList[I];
 
     ARecordJson:=SO();
-    ARecordJson.S['_id']:=AImageItem.ImageId;
+//    ARecordJson.S['_id']:=AImageItem.ImageId;
     ARecordJson.S['teamId']:=ACollectionJson.S['teamId'];
     ARecordJson.S['filename']:=ExtractFileName(AImageItem.ImagePath);
     ARecordJson.S['filepath']:=AImageItem.ImagePath;
@@ -90,7 +92,7 @@ end;
 
 
 // 处理数据集
-function ProcessDatasetCollection(ACollectionJson:ISuperObject;var ADesc:String):Boolean;
+function DoProcessDatasetCollection(ACollectionJson:ISuperObject;var ADesc:String):Boolean;
 var
   I:Integer;
   ACode:Integer;
@@ -101,6 +103,8 @@ var
   AIntfItem:TCommonRestIntfItem;
   AUpdateJson:ISuperObject;
   ATempJson:ISuperObject;
+  AFileJson:ISuperObject;
+  AFilePath:String;
 begin
   Result:=False;
   ADesc:='';
@@ -115,7 +119,7 @@ begin
   end;
   // 开始处理数据集，先将该数据集的状态设置为process
   AUpdateJson:=SO();
-  AUpdateJson.S['status']:='process';
+  AUpdateJson.S['state']:='process';
   AIntfItem.UpdateRecord(AIntfItem.DBModule,nil,'',AUpdateJson,GetWhereConditions(['_id'],[ACollectionJson.S['_id']]),'',ACode,ADesc,ATempJson);
 
 
@@ -123,9 +127,14 @@ begin
   AParseDocumentResult:=nil;
   //如果是本地文件，那么先解析文件
   if ACollectionJson.S['type'] = 'file' then
-  begin  
+  begin
+    // 先获取文件内容
+    if not GetFilePathByFileId(BUCKET_DATASET,ACollectionJson.S['fileId'],ADesc,AFileJson,AFilePath) then
+    begin
+      Exit;
+    end;
     // 先解析文件
-    AParseDocumentResult:=ParseFile(ACollectionJson.S['file_path']);
+    AParseDocumentResult:=ParseFile(AFilePath);
   end;
   if AParseDocumentResult=nil then
   begin
@@ -145,32 +154,34 @@ begin
   AIntfItem.DeleteRecord(AIntfItem.DBModule,nil,ACollectionJson.S['teamId'],ACollectionJson.S['fileId'],'',ACode,ADesc,ADataJson);
   // 添加新的记录
   ARecordJson:=SO();
+//  ARecordJson.S['_id']:=CreateGUIDString();
   ARecordJson.S['sourceId']:=ACollectionJson.S['fileId'];
-  ARecordJson.S['raw_text']:=AParseDocumentResult.MarkdownContent;
-  AIntfItem.AddRecord(AIntfItem.DBModule,nil,ACollectionJson.S['teamId'],ARecordJson,nil,ACode,ADesc,ADataJson);
+  ARecordJson.S['rawtext']:=AParseDocumentResult.MarkdownContent;
+  AIntfItem.AddRecord(AIntfItem.DBModule,nil,'',ARecordJson,nil,ACode,ADesc,ADataJson);
 
 
 
 
   // 将解析后的文档内容保存到数据库
-  SaveDocumentImages(ACollectionJson,AParseDocumentResult,ADesc);
-  
+//  SaveDocumentImages(ACollectionJson,AParseDocumentResult,ADesc);
+
 
   // 将文档内容进行分片并存储
   AChunks:=SplitDocument(ACollectionJson,AParseDocumentResult);
   
   // 对分片进行存储
-  AIntfItem:=GlobalCommonRestIntfList.Find('dataset_texts');
+  AIntfItem:=GlobalCommonRestIntfList.Find('dataset_datas');
   if AIntfItem=nil then
   begin
     // ADesc:='不存在dataset_collections接口';
-    uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_texts接口');
+    uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_datas接口');
     Exit;
   end;  
   AIntfItem.DeleteRecord(AIntfItem.DBModule,nil,ACollectionJson.S['teamId'],ACollectionJson.S['fileId'],'',ACode,ADesc,ADataJson);
   for I:=0 to AChunks.Count-1 do
   begin
     ARecordJson:=SO();
+//    ARecordJson.S['_id']:=CreateGUIDString;
     ARecordJson.S['teamId']:=ACollectionJson.S['teamId'];
     ARecordJson.S['datasetId']:=ACollectionJson.S['datasetId'];
     ARecordJson.S['collectionId']:=ACollectionJson.S['_id'];
@@ -204,9 +215,8 @@ begin
 end;
 
 
-{ TDatasetCollectionProcessTask }
 
-procedure TDatasetCollectionProcessTask.Execute;
+function ProcessDatasetCollectionTask:Boolean;
 var
   ACode:Integer;
   ADesc:String;
@@ -218,35 +228,53 @@ var
   AIntfItem:TCommonRestIntfItem;
   AWhereKeyJsonArray:ISuperArray;
 begin
+  Result:=False;
+
+  AIntfItem:=GlobalCommonRestIntfList.Find('dataset_collections');
+  if AIntfItem=nil then
+  begin
+    // ADesc:='不存在dataset_collections接口';
+    uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_collections接口');
+    Exit;
+  end;
+
+  // 从数据库中查询需要重新处理的知识库数据集
+  AWhereKeyJsonArray:=GetWhereConditionArray(['state'],['wait']);
+
+  if not AIntfItem.GetRecord('',AWhereKeyJsonArray.AsJSON(),'','',ACode,ADesc,ACollectionJson) then
+  begin
+    //不存在等久一点
+    Exit;
+  end;
+
+
+  // 处理数据集
+  if not DoProcessDatasetCollection(ACollectionJson,ADesc) then
+  begin
+    Exit;
+  end;
+
+  Result:=True;
+
+end;
+
+
+{ TDatasetCollectionProcessTask }
+
+procedure TDatasetCollectionProcessTask.Execute;
+begin
   SleepThread(10000);
   while not Terminated do
   begin
-    
-    
 
 
-    AIntfItem:=GlobalCommonRestIntfList.Find('dataset_collections');
-    if AIntfItem=nil then
-    begin
-      // ADesc:='不存在dataset_collections接口';
-      uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在dataset_collections接口');
-      SleepThread(5000);
-      continue;
-    end;
-
-    // 从数据库中查询需要重新处理的知识库数据集
-    AWhereKeyJsonArray:=GetWhereConditionArray(['state'],['wait']);
-
-    if not AIntfItem.GetRecord('',AWhereKeyJsonArray.AsJSON(),'','',ACode,ADesc,ACollectionJson) then
+    // 处理数据集
+    if not ProcessDatasetCollectionTask then
     begin
       //不存在等久一点
       SleepThread(5000);
       continue;
     end;
-
-
-    // 处理数据集
-    ProcessDatasetCollection(ACollectionJson,ADesc);
 
 
 

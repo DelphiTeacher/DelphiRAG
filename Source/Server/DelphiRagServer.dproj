@@ -164,6 +164,8 @@
         <DCCReference Include="Core\UploadFile.pas"/>
         <DCCReference Include="Core\FileIndyHttpServerModule.pas"/>
         <DCCReference Include="Core\uGenerateThumb.pas"/>
+        <DCCReference Include="Core\uDatasetCollectionProcessTask.pas"/>
+        <DCCReference Include="Core\uDataEmbeddingProcessTask.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

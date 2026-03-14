@@ -10,6 +10,7 @@ uses
   System.SysUtils,
   DocumentReader,
   NativePDFDocumentReader,
+
   TokenTextSplitter,
   RagServer,
   uTestUnit in 'uTestUnit.pas';
@@ -34,19 +35,20 @@ begin
 
 
     // 创建知识库
-//    testAddDatasetToDB(ADesc);
+    testAddDatasetToDB(ADesc);
 //    WriteLn('testAddDatasetToDB '+ADesc);
 
 
 
     // 上传文档
-    // testUploadFile('D:\DelphiRAG\Source\Server\Core\spring_ai_alibaba_quickstart.pdf',ADesc);
+//     testUploadFile('D:\DelphiRAG\Source\Server\Core\spring_ai_alibaba_quickstart.pdf',ADesc);
 
     // 添加数据集
-    testCreateCollectionByFile('FA4B9372E2E74EC6A3634BF808A47604','B14B1860334F47DCB10471061594EF10',ADesc);
+//     testCreateCollectionByFile('549897af-f275-4042-a0d5-cef9caecb4c0','34bfb23e-4d11-44df-bd55-07283a6d1697',ADesc);
 
 
     // 分片、向量化
+    testProcessDatasetCollectionTask(ADesc);
 
     // 处理向量化
 

@@ -2373,8 +2373,9 @@ begin
 
               //select @@IDENTITY
               //因为有些表插入记录的时候自带有fid，所以返回插入数据的时候，不能用last_insert_id
+              //这里还是要看字段类型，如果是整型的话可以这么干
               ASelectAfterInsert:='';
-              if PKFieldName<>'' then
+              if (PKFieldName<>'') and (PKFieldName<>'_id') then
               begin
                   AOperation:=asoOpen;
                   if not ARecordDataJson.Contains(PKFieldName) then

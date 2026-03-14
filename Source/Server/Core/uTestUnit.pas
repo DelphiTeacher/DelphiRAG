@@ -12,6 +12,7 @@ uses
   NativePDFDocumentReader,
   TokenTextSplitter,
   UploadFile,
+  uDatasetCollectionProcessTask,
   uTableCommonRestCenter,
   RagServer;
 
@@ -26,9 +27,18 @@ function testUploadFile(AFilePath:String;var ADesc:String):Boolean;
 function testCreateCollectionByFile(AFileId:String;ADatasetId:String;var ADesc:String):Boolean;
 
 
+function testProcessDatasetCollectionTask(var ADesc:String):Boolean;
 
 
 implementation
+
+
+
+
+function testProcessDatasetCollectionTask(var ADesc:String):Boolean;
+begin
+  ProcessDatasetCollectionTask();
+end;
 
 
 function testUploadFile(AFilePath:String;var ADesc:String):Boolean;
@@ -58,7 +68,7 @@ var
   AIntfItem:TCommonRestIntfItem;
 begin
   ARecordJson:=SO();
-  ARecordJson.S['_id']:=CreateGUIDString();
+//  ARecordJson.S['_id']:=CreateGUIDString();
   ARecordJson.S['teamId']:='1044';
   ARecordJson.S['tmbId']:='admin';
   ARecordJson.S['datasetId']:=ADatasetId;
@@ -66,7 +76,7 @@ begin
   ARecordJson.S['name']:='spring_ai_alibaba_quickstart.pdf';
   ARecordJson.B['forbid']:=False;
   // 分片设置
-  ARecordJson.S['traningType']:='chunk';
+  ARecordJson.S['trainingType']:='chunk';
   ARecordJson.S['chunkSettingMode']:='auto';
   ARecordJson.S['chunkSplitMode']:='size';
   ARecordJson.I['chunkSize']:=1024;
@@ -108,7 +118,7 @@ var
   AIntfItem:TCommonRestIntfItem;
 begin
   ARecordJson:=SO();
-  ARecordJson.S['_id']:=CreateGUIDString();
+//  ARecordJson.S['_id']:=CreateGUIDString();
   ARecordJson.S['teamId']:='1044';
   ARecordJson.S['tmbId']:='admin';
   ARecordJson.S['type']:='file';
