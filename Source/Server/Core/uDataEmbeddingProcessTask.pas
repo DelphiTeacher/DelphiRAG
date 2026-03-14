@@ -6,7 +6,8 @@ uses
   SysUtils,Classes,uTimerTask,
 
 
-  uTableCommonRestCenter,  
+  uTableCommonRestCenter, 
+  uGenTextEmbedding, 
   GenAI.Async.Promise,
 
   GenAI, GenAI.Types,
@@ -31,11 +32,15 @@ function DoDataEmbeddingProcess(ADesc:String):Boolean;
 
 implementation
 
+uses
+  RagServer;
+
 
 function DoDataEmbeddingProcess(ADesc:String): Boolean;
 var
   Client : IGenAI;
 var
+  I:Integer;
   ACode:Integer;
   ADataChunkJson:ISuperObject;
   ACollectionJson:ISuperObject;
@@ -43,6 +48,10 @@ var
   Value1:TEmbeddings;
   AIntfItem:TCommonRestIntfItem;
   AWhereKeyJsonArray:ISuperArray;
+  AVectorArray:ISuperArray;
+  ARecordJson:ISuperObject;
+  AEmbedding:TArray<Double>;
+  AChunks:ISuperArray;
 begin
   Result := False;
 
@@ -93,11 +102,12 @@ begin
   if not AIntfItem.GetRecord('',GetWhereConditions(['_id'],[ACollectionJson.S['datasetId']]),'','',ACode,ADesc,ADatasetJson) then
   begin
     // 不存在，等久一点
-    uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在对应的collection');
+    uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute 不存在对应的dataset');
     Exit;
   end;
 
   // 找到对应的模型，调用向量化模型
+  uBaseLog.HandleException(nil,'TDatasetCollectionProcessTask.Execute dataset '+ADatasetJson.S['vectormodel']);
 
 
   Client := TGenAI.Create('sk-5c2de62c553f41bdafa7357c390a0079');
@@ -108,13 +118,42 @@ begin
     procedure (Params: TEmbeddingsParams)
     begin
       Params.Input([ADataChunkJson.S['q']+ADataChunkJson.S['a']]);
-      Params.Model(ADatasetJson.S['model']);
-      Params.Dimensions(1024);
+      Params.Model(ADatasetJson.S['vectormodel']);
+//      Params.Dimensions(1024);
       Params.EncodingFormat(TEncodingFormat.float);
     end);
 
+  AEmbedding:=Value1.Data[0].Embedding;
 
   //保存到向量数据库中
+  AVectorArray:=SA();
+  // 插入一个向量
+  ARecordJson:=SO();
+  ARecordJson.S['team_id']:='test';
+  ARecordJson.S['dataset_id']:='test';
+  ARecordJson.S['collection_id']:='test';
+  ARecordJson.S['model']:='text-embedding-v3';
+//  AVectorArray:=SA();
+//  for I := 0 to 1536-1 do
+//  begin
+//    if I<Length(AEmbedding) then
+//    begin 
+//      AVectorArray.F[I]:=AEmbedding[I];
+//    end
+//    else
+//    begin
+//      AVectorArray.F[I]:=0;
+//    end;
+//  end;
+  AVectorArray:=DoubleArrayToJsonArray(AEmbedding); 
+  ARecordJson.A['vector']:=AVectorArray;
+
+
+  AChunks:=SA();
+  AChunks.O[0]:=ARecordJson;
+  GlobalRagServer.FVectorStore.Add(AChunks);
+
+
 
 
 

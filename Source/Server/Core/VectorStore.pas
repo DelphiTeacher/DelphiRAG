@@ -3,7 +3,7 @@
 interface
 
 uses
-  System.SysUtils, System.Classes, System.Math, System.Generics.Collections, uBaseList;
+  System.SysUtils, System.Classes, System.Math, System.Generics.Collections, uBaseList,XSuperObject;
 
 
 type
@@ -12,6 +12,7 @@ type
     TopK: Integer;
     Threshold: Double;
     MaxTokens: Integer;
+    Vector:TArray<Double>;
   end;
 
   // 搜索结果
@@ -23,10 +24,12 @@ type
 
 
   IVectorStore = interface
-    procedure add(AChunks:TStrings);
-    procedure delete(AChunkId:String);
+    procedure add(AChunks:ISuperArray);
+    procedure delete(AWhereKeyJson:ISuperArray);
     function similaritySearch(ASearchRequest:TSearchRequest):TSearchResultList;
   end;
+
+
 
 implementation
 

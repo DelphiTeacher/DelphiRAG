@@ -9,13 +9,18 @@ uses
   uTableCommonRestCenter,
   ServerDataBaseModule,
 
+  VectorStore,
+  PostgreSqlVectorStore,
+
   System.Generics.Collections;
 
 
 type
+  //Rag服务主类
   TRagServer = class(TComponent)
 
   public
+    FVectorStore:TPostgreSqlVectorStore;
     FDBModule: TDataBaseModule;
     procedure Init;
 
@@ -42,12 +47,21 @@ constructor TRagServer.Create(AOwner: TComponent);
 begin
   inherited;
   FDBModule := TDataBaseModule.Create();
+
+  FVectorStore:=TPostgreSqlVectorStore.Create(nil);
+  FVectorStore.FDBModule.DBConfigFileName:='RagCenterDBConfig.ini';
+  FVectorStore.FDBModule.DBConfig.FDBDataBaseName:='rag_center';
+
+
+
   Init;
 end;
 
 destructor TRagServer.Destroy;
 begin
   FreeAndNil(FDBModule);
+
+  FreeAndNil(FVectorStore);
   Inherited;
 end;
 
@@ -246,6 +260,7 @@ begin
 
 
 
+
 end;
 
 procedure TRagServer.Start;
@@ -253,6 +268,8 @@ var
   ADesc:String;
 begin
   Self.FDBModule.DoPrepareStart(ADesc);
+
+  FVectorStore.Start;
 end;
 
 procedure TRagServer.Stop;

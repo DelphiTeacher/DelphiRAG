@@ -1,4 +1,4 @@
-unit uGenTextEmbedding;
+﻿unit uGenTextEmbedding;
 
 interface
 
@@ -9,7 +9,7 @@ uses
 
 //  XSuperObject,
   System.JSON,
-
+  XSuperObject,
 
   System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent;
 
@@ -43,6 +43,9 @@ function GetTextEmbedding(NetHTTPClient1:TNetHTTPClient;AText:String;AAPIKey:Str
 //function getDoubleArrayStr(AValues:TArray<Double>):String;
 
 function DoubleArrayToString(const DoubleArray: TArray<Double>): string;
+function DoubleArrayToJsonArray(const DoubleArray: TArray<Double>): ISuperArray;
+function DoubleJsonArrayToString(const DoubleArray: ISuperArray): string;
+function DoubleJsonArrayToArray(const DoubleArray: ISuperArray): TArray<Double>;
 
 function CosineSimilarity(const Vec1, Vec2: array of Double): Double;
 
@@ -73,6 +76,52 @@ begin
   finally
     StrList.Free;
   end;
+end;
+
+function DoubleArrayToJsonArray(const DoubleArray: TArray<Double>): ISuperArray;
+var
+  i: Integer;
+begin
+  Result := SA();
+  // �������鲢��ÿ��Ԫ��ת��Ϊ�ַ���
+  for i := 0 to High(DoubleArray) do
+  begin
+    Result.F[I]:=DoubleArray[i];  // ��ÿ��Ԫ��ת��Ϊ�ַ���
+  end;
+
+end;
+
+function DoubleJsonArrayToString(const DoubleArray: ISuperArray): string;
+var
+  i: Integer;
+  StrList: TStringList;
+begin
+  StrList := TStringList.Create;
+  try
+    // �������鲢��ÿ��Ԫ��ת��Ϊ�ַ���
+    for i := 0 to DoubleArray.Length-1 do
+    begin
+      StrList.Add(FloatToStr(DoubleArray.F[i]));  // ��ÿ��Ԫ��ת��Ϊ�ַ���
+    end;
+
+    // ���ַ����б����ӳ�һ���Զ��ŷָ����ַ���
+    Result := StrList.CommaText;
+  finally
+    StrList.Free;
+  end;
+end;
+
+function DoubleJsonArrayToArray(const DoubleArray: ISuperArray): TArray<Double>;
+var
+  i: Integer;
+begin
+  SetLength(Result,DoubleArray.Length);
+  // �������鲢��ÿ��Ԫ��ת��Ϊ�ַ���
+  for i := 0 to DoubleArray.Length-1 do
+  begin
+    Result[i]:=DoubleArray.F[i];  // ��ÿ��Ԫ��ת��Ϊ�ַ���
+  end;
+
 end;
 
 

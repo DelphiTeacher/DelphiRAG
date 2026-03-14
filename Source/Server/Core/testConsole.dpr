@@ -32,7 +32,7 @@ begin
 
 
     // 创建知识库
-    testAddDatasetToDB(ADesc);
+//    testAddDatasetToDB(ADesc);
 //    WriteLn('testAddDatasetToDB '+ADesc);
 
 
@@ -46,6 +46,11 @@ begin
 
     // 分片、向量化
 //    testProcessDatasetCollectionTask(ADesc);
+
+
+    //
+//    testPostgreSqlVectorStore(ADesc);
+
 
     // 处理向量化
     testDataEmbeddingProcessTask(ADesc);

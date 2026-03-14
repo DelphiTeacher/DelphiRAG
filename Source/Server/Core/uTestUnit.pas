@@ -15,7 +15,13 @@ uses
   uDatasetCollectionProcessTask,
   uTableCommonRestCenter,
   uDataEmbeddingProcessTask,
+  VectorStore,
+  PostgreSqlVectorStore,
+  uGenTextEmbedding,
   RagServer;
+
+
+
 
 function testSpliter(var ADesc:String):Boolean;
 // 测试添加知识库到数据库
@@ -32,11 +38,67 @@ function testCreateCollectionByFile(AFileId:String;ADatasetId:String;var ADesc:S
 function testProcessDatasetCollectionTask(var ADesc:String):Boolean;
 
 
+// 测试PG的VectorStore
+function testPostgreSqlVectorStore(var ADesc:String):Boolean;
+
+
 // 测试文档向量化
 function testDataEmbeddingProcessTask(var ADesc:String):Boolean;
 
 
 implementation
+
+
+// 测试PG的VectorStore
+function testPostgreSqlVectorStore(var ADesc:String):Boolean;
+var
+  AVectorStore:TPostgreSqlVectorStore;
+  ARecordJson:ISuperObject;
+  AVectorArray:ISuperArray;
+  I: Integer;
+  AChunks:ISuperArray;
+  ASearchRequest:TSearchRequest;
+  ASearchResultList:TSearchResultList;
+begin
+  //
+  AVectorStore:=TPostgreSqlVectorStore.Create(nil);
+  AVectorStore.FDBModule.DBConfigFileName:='RagCenterDBConfig.ini';
+  AVectorStore.FDBModule.DBConfig.FDBDataBaseName:='rag_center';
+  //连接数据库
+  AVectorStore.Start;
+
+  // 插入一个向量
+  ARecordJson:=SO();
+  ARecordJson.S['team_id']:='test';
+  ARecordJson.S['dataset_id']:='test';
+  ARecordJson.S['collection_id']:='test';
+  ARecordJson.S['model']:='text-embedding-v3';
+  AVectorArray:=SA();
+  for I := 0 to 1024-1 do
+  begin
+    AVectorArray.F[I]:=0;
+  end;
+  ARecordJson.A['vector']:=AVectorArray;
+
+
+  AChunks:=SA();
+  AChunks.O[0]:=ARecordJson;
+  AVectorStore.Add(AChunks);
+
+
+  // 看看返回的向量字段类型，在Unidac中是怎么样的一个数据库字段类型
+
+
+  // 测试向量搜索
+  ASearchRequest.Vector:=DoubleJsonArrayToArray(AVectorArray);
+  ASearchResultList:=AVectorStore.SimilaritySearch(ASearchRequest);
+
+
+  ASearchResultList.Free;
+
+  AVectorStore.Free; 
+
+end;
 
 
 function testDataEmbeddingProcessTask(var ADesc:String):Boolean;
@@ -93,6 +155,7 @@ begin
   
   ARecordJson.S['fileId']:=AFileId;
   ARecordJson.S['state']:='wait';
+  
 
   AIntfItem:=GlobalCommonRestIntfList.Find('dataset_collections');
   if AIntfItem=nil then
